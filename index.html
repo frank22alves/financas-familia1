@@ -403,6 +403,18 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
     <button class="btn" style="background:var(--danger-dim);border:1px solid var(--danger);color:var(--danger);" onclick="viradaAno()">Iniciar novo ano (2027)</button>
   </div>
   <div class="setting-group">
+    <div class="setting-group-title">Importar dados da planilha</div>
+    <p style="font-size:11px;color:var(--t3);margin-bottom:.75rem;line-height:1.6;">Selecione o arquivo <b style="color:var(--jo)">importacao_2026.json</b> gerado pelo script Python para carregar todos os dados da sua planilha Excel.</p>
+    <div id="import-status" style="display:none;background:var(--s2);border-radius:var(--r2);padding:.75rem;margin-bottom:.75rem;font-size:12px;line-height:1.7;"></div>
+    <label style="display:block;width:100%;">
+      <input type="file" id="import-file" accept=".json" style="display:none;" onchange="importarJSON(this)">
+      <div class="btn btn-outline" style="cursor:pointer;" onclick="document.getElementById('import-file').click()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Selecionar arquivo JSON
+      </div>
+    </label>
+  </div>
+  <div class="setting-group">
     <div class="setting-group-title">Dados</div>
     <button class="btn btn-ghost" onclick="if(confirm('Limpar TODOS os dados?')) { localStorage.clear(); location.reload(); }">Limpar todos os dados</button>
   </div>
@@ -1021,6 +1033,82 @@ async function checkConn(){
   const dot=document.getElementById('cdot'),st=document.getElementById('cstat');
   try{await fetch(GAS+'?p=1',{mode:'no-cors'});dot.className='conn-dot';st.textContent='ONLINE';}
   catch{dot.className='conn-dot off';st.textContent='OFFLINE';}
+}
+
+/* ============================================================
+   IMPORTAR JSON
+============================================================ */
+function importarJSON(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      const status = document.getElementById('import-status');
+      status.style.display = 'block';
+      status.innerHTML = '<span style="color:var(--warn)">⏳ Importando...</span>';
+
+      let nFix=0, nRec=0, nHist=0, nAtr=0;
+
+      // Gastos fixos
+      if (Array.isArray(data.fix)) {
+        data.fix.forEach(f => {
+          const exists = state.fix.find(x => x.desc === f.desc);
+          if (!exists) { state.fix.push(f); nFix++; }
+        });
+      }
+
+      // Receitas
+      if (Array.isArray(data.rec)) {
+        data.rec.forEach(r => {
+          state.rec.push(r); nRec++;
+        });
+      }
+
+      // Histórico (cartões + fixos pagos)
+      if (Array.isArray(data.hist)) {
+        const existingIds = new Set(state.hist.map(h => h.id));
+        data.hist.forEach(h => {
+          if (!existingIds.has(h.id)) {
+            state.hist.push(h); nHist++;
+          }
+        });
+      }
+
+      // Contas atrasadas → extras pendentes (mês atual)
+      if (Array.isArray(data.atrasadas)) {
+        data.atrasadas.forEach(a => {
+          state.var_.push({
+            desc: a.desc,
+            val: a.val,
+            cat: 'Outros',
+            quem: 'Família',
+            sit: a.sit || 'PENDENTE',
+            mes: new Date().getMonth()
+          });
+          nAtr++;
+        });
+      }
+
+      save();
+      status.innerHTML = `<span style="color:var(--rec)">✅ Importação concluída!</span><br>
+        <span style="color:var(--t2)">
+          ${nFix} gasto(s) fixo(s)<br>
+          ${nRec} receita(s)<br>
+          ${nHist} registro(s) no histórico<br>
+          ${nAtr} conta(s) atrasada(s) → aba Extras
+        </span>`;
+      renderDash(); renderFix(); renderRec(); renderVar(); renderHist();
+      toast('Dados importados com sucesso!', 'ok');
+    } catch(err) {
+      document.getElementById('import-status').style.display = 'block';
+      document.getElementById('import-status').innerHTML = '<span style="color:var(--danger)">❌ Erro ao ler o arquivo. Verifique se é o JSON gerado pelo script.</span>';
+      toast('Erro na importação', 'err');
+    }
+    input.value = '';
+  };
+  reader.readAsText(file);
 }
 
 /* ============================================================
