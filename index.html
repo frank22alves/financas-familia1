@@ -583,12 +583,9 @@ function renderDash(){
   for(let d2=1;d2<=dim;d2++)cal+=`<div class="cal-day${isCurMon&&d2===hoje.getDate()?' today':''}${vDays.has(d2)?' has-ev':''}">${d2}</div>`;
   cal+='</div>';
 
-  // Pending fixos — usa sitOverrides[m] se existir
-  function fixSit(f,mi){return(f.sitOverrides&&f.sitOverrides[mi]!=null)?f.sitOverrides[mi]:(f.situacao||'PENDENTE');}
-  const pendFix=S.fix.filter(f=>f.ativo&&m>=f.mi&&fixSit(f,m)==='PENDENTE'&&f.adiadoMes!==m);
+  // Pending fixos & extras
+  const pendFix=S.fix.filter(f=>f.ativo&&m>=f.mi&&(!f.situacao||f.situacao==='PENDENTE')&&f.adiadoMes!==m);
   const pendVar=S.var_.filter(v=>v.mes===m&&v.sit==='PENDENTE'&&!v.adiadoMes);
-  const joStatus=S.status?.joCC||'PENDENTE';
-  const fkStatus=S.status?.fkCC||'PENDENTE';
 
   document.getElementById('dash-body').innerHTML=`
     <div class="g2">
@@ -604,7 +601,8 @@ function renderDash(){
     <div class="kc fk" style="margin-bottom:7px;">
       <div class="klbl">CARTÃO FRANK</div>
       <div class="kval fk">${fmt(d.tFk)}</div>
-      ${statusBadge(fkStatus,'fk')}
+      ${statusBadge(S.status?.fkCC||'PENDENTE')}
+      ${statusBadge(S.status?.fkCC||'PENDENTE','fk')}
     </div>
     <div class="g3">
       <div class="kc fix"><div class="klbl">FIXOS</div><div class="kval fix" style="font-size:14px;">${fmt(d.tFix)}</div></div>
@@ -613,14 +611,12 @@ function renderDash(){
     </div>
     <div class="kc" style="margin-bottom:7px;"><div class="klbl">TOTAL GASTOS</div><div class="kval neg" style="font-size:19px;">${fmt(d.tGastos)}</div></div>
 
-     ${(joStatus==='PENDENTE'||fkStatus==='PENDENTE'||pendFix.length||pendVar.length)?`
-     <div class="shdr"><span class="shdr-lbl" style="color:var(--warn);">&#x23F3; Pendentes do mês</span><span class="shdr-val" style="color:var(--t3);font-size:10px;">toque para marcar pago</span></div>
-     <div class="pend-list">
-       ${joStatus==='PENDENTE'?`<div class="pend-item" onclick="toggleStatus('jo')" style="cursor:pointer;border-left-color:var(--jo)"><span class="pend-name">Cartao Jorgiane</span><span class="pend-val" style="color:var(--jo)">${fmt(d.tJo+d.tCl)}</span></div>`:''}
-       ${fkStatus==='PENDENTE'?`<div class="pend-item" onclick="toggleStatus('fk')" style="cursor:pointer;border-left-color:var(--fk)"><span class="pend-name">Cartao Frank</span><span class="pend-val" style="color:var(--fk)">${fmt(d.tFk)}</span></div>`:''}
-       ${pendFix.map(f=>{const v=(f.overrides&&f.overrides[m]!=null)?f.overrides[m]:f.val;return'<div class="pend-item" onclick="toggleFixSit(''+f.id+'','+m+')" style="cursor:pointer;"><span class="pend-name">'+f.desc+'</span><span class="pend-val">'+fmt(v)+'</span></div>';}).join('')}
-       ${pendVar.map(vv=>'<div class="pend-item" onclick="toggleVarSit(''+vv.id+'')" style="cursor:pointer;"><span class="pend-name">'+vv.desc+'</span><span class="pend-val">'+fmt(vv.val)+'</span></div>').join('')}
-     </div>`:''}
+    ${pendFix.length||pendVar.length?`
+    <div class="shdr"><span class="shdr-lbl" style="color:var(--warn);">⏳ Pendentes do mês</span></div>
+    <div class="pend-list">
+      ${pendFix.map(f=>{const v=(f.overrides&&f.overrides[m]!=null)?f.overrides[m]:f.val;return`<div class="pend-item"><span class="pend-name">${f.desc}</span><span class="pend-val">${fmt(v)}</span></div>`;}).join('')}
+      ${pendVar.map(v=>`<div class="pend-item"><span class="pend-name">${v.desc}</span><span class="pend-val">${fmt(v.val)}</span></div>`).join('')}
+    </div>`:''}
 
     ${catList.length?`<div class="chart"><div class="chart-ttl">Gastos por categoria</div>${catList.slice(0,8).map(([c,v])=>`<div class="br"><div class="br-lbl">${c}</div><div class="br-track"><div class="br-fill" style="width:${v/maxC*100}%;background:${cclr[c]||'var(--t3)'}"></div></div><div class="br-val">${fmtS(v)}</div></div>`).join('')}</div>`:''}
     <div class="cal"><div class="cal-ttl">Vencimentos <span style="color:var(--cl);font-size:8px;">● conta fixa</span></div>${cal}</div>
