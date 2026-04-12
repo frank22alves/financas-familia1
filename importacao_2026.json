@@ -1,0 +1,4113 @@
+{
+  "cc": [],
+  "fix": [
+    {
+      "id": "fix_ALUGUEL_0",
+      "desc": "ALUGUEL",
+      "val": 1300.0,
+      "venc": "1",
+      "cat": "Moradia",
+      "adj": false,
+      "mi": 0,
+      "overrides": {},
+      "ativo": true
+    },
+    {
+      "id": "fix_PENSÃO_0",
+      "desc": "PENSÃO",
+      "val": 400.0,
+      "venc": "1",
+      "cat": "Outros",
+      "adj": false,
+      "mi": 0,
+      "overrides": {
+        "2": 300.0,
+        "3": 300.0,
+        "4": 300.0
+      },
+      "ativo": true
+    },
+    {
+      "id": "fix_FACULDADE_0",
+      "desc": "FACULDADE",
+      "val": 785.41,
+      "venc": "13",
+      "cat": "Educação",
+      "adj": false,
+      "mi": 0,
+      "overrides": {
+        "0": 1094.69,
+        "7": 800.0
+      },
+      "ativo": true
+    },
+    {
+      "id": "fix_CELULAR_CLARO_0",
+      "desc": "CELULAR CLARO",
+      "val": 34.27,
+      "venc": "",
+      "cat": "Internet",
+      "adj": false,
+      "mi": 0,
+      "overrides": {},
+      "ativo": true
+    },
+    {
+      "id": "fix_ENERGIA_PVH_0",
+      "desc": "ENERGIA PVH",
+      "val": 458.13,
+      "venc": "6",
+      "cat": "Energia",
+      "adj": true,
+      "mi": 0,
+      "overrides": {
+        "0": 332.88,
+        "1": 346.61,
+        "4": 550.8,
+        "5": 500.0,
+        "6": 500.0,
+        "7": 500.0
+      },
+      "ativo": true
+    },
+    {
+      "id": "fix_ENERGIA_PVH_-_ATRASADA_DE_3",
+      "desc": "ENERGIA PVH - ATRASADA DE MARÇO",
+      "val": 448.7,
+      "venc": "6",
+      "cat": "Energia",
+      "adj": true,
+      "mi": 3,
+      "overrides": {},
+      "ativo": true
+    },
+    {
+      "id": "fix_CARTÕES_DE_CRÉDITO_8",
+      "desc": "CARTÕES DE CRÉDITO",
+      "val": 1253.29,
+      "venc": "",
+      "cat": "Outros",
+      "adj": false,
+      "mi": 8,
+      "overrides": {
+        "9": 935.0,
+        "10": 935.0,
+        "11": 274.13
+      },
+      "ativo": true
+    }
+  ],
+  "var_": [],
+  "rec": [
+    {
+      "desc": "JORGIANE",
+      "val": 1000.0,
+      "tipo": "Salário",
+      "quem": "Jorgiane",
+      "mes": 0
+    },
+    {
+      "desc": "FRANK",
+      "val": 6016.18,
+      "tipo": "Salário",
+      "quem": "Frank",
+      "mes": 0
+    },
+    {
+      "desc": "CLARICE",
+      "val": 319.88,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 0
+    },
+    {
+      "desc": "GAD",
+      "val": 4276.26,
+      "tipo": "Pensão",
+      "quem": "Família",
+      "mes": 0
+    },
+    {
+      "desc": "13º SALARIO",
+      "val": 2334.47,
+      "tipo": "Salário",
+      "quem": "Família",
+      "mes": 0
+    },
+    {
+      "desc": "JORGIANE",
+      "val": 1000.0,
+      "tipo": "Salário",
+      "quem": "Jorgiane",
+      "mes": 1
+    },
+    {
+      "desc": "FRANK",
+      "val": 6100.0,
+      "tipo": "Salário",
+      "quem": "Frank",
+      "mes": 1
+    },
+    {
+      "desc": "CLARICE",
+      "val": 444.87,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 1
+    },
+    {
+      "desc": "CLARICE",
+      "val": 1300.0,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 1
+    },
+    {
+      "desc": "JORGIANE",
+      "val": 1000.0,
+      "tipo": "Salário",
+      "quem": "Jorgiane",
+      "mes": 2
+    },
+    {
+      "desc": "FRANK",
+      "val": 5500.0,
+      "tipo": "Salário",
+      "quem": "Frank",
+      "mes": 2
+    },
+    {
+      "desc": "CLARICE",
+      "val": 444.87,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 2
+    },
+    {
+      "desc": "JORGIANE",
+      "val": 1000.0,
+      "tipo": "Salário",
+      "quem": "Jorgiane",
+      "mes": 3
+    },
+    {
+      "desc": "FRANK",
+      "val": 7014.84,
+      "tipo": "Salário",
+      "quem": "Frank",
+      "mes": 3
+    },
+    {
+      "desc": "CLARICE",
+      "val": 319.88,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 3
+    },
+    {
+      "desc": "CLARICE",
+      "val": 124.99,
+      "tipo": "Reembolso Clarice",
+      "quem": "Família",
+      "mes": 4
+    }
+  ],
+  "hist": [
+    {
+      "id": "rec_JANEIRO_JORGIANE",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "JANEIRO",
+          "descricao": "JORGIANE",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Jorgiane",
+          "valor": 1000.0
+        }
+      ]
+    },
+    {
+      "id": "rec_JANEIRO_FRANK",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "JANEIRO",
+          "descricao": "FRANK",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Frank",
+          "valor": 6016.18
+        }
+      ]
+    },
+    {
+      "id": "rec_JANEIRO_CLARICE",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "JANEIRO",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 319.88
+        }
+      ]
+    },
+    {
+      "id": "rec_JANEIRO_GAD",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "JANEIRO",
+          "descricao": "GAD",
+          "tipoReceita": "Pensão",
+          "recebidoPor": "Família",
+          "valor": 4276.26
+        }
+      ]
+    },
+    {
+      "id": "rec_JANEIRO_13º SALARIO",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "JANEIRO",
+          "descricao": "13º SALARIO",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Família",
+          "valor": 2334.47
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_ALUGUEL",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_PENSÃO",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 400.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_FACULDADE",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_CELULAR CLARO",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_ENERGIA PVH",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 458.13
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_FACULDADE",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 1094.69
+        }
+      ]
+    },
+    {
+      "id": "fix_JANEIRO_ENERGIA PVH",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JANEIRO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 332.88
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_SKY_X_24.99",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SKY",
+          "parcela": "X",
+          "valor": 24.99
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_SKY_X_24.99",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SKY",
+          "parcela": "X",
+          "valor": 24.99
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_OI INTERNET_X_119.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "OI INTERNET",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_GRAN CONCURSOS__49.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRAN CONCURSOS",
+          "parcela": "X",
+          "valor": 49.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_PISCINA_3/3_61.28",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "PISCINA",
+          "parcela": "3/3",
+          "valor": 61.28
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_INSULFIM_4/4_225.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INSULFIM",
+          "parcela": "4/4",
+          "valor": 225.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JANEIRO_FARMACIA_2/2_94.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/2",
+          "valor": 94.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_AMAZON PRIME_8/12_13.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "AMAZON PRIME",
+          "parcela": "8/12",
+          "valor": 13.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MATERIAL MURO_4/4_385.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MATERIAL MURO",
+          "parcela": "4/4",
+          "valor": 385.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_HAVAN_3/4_221.59",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "CLARICE",
+          "descricao": "HAVAN",
+          "parcela": "3/4",
+          "valor": 221.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_FARMACIA_3/3_87.04",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "3/3",
+          "valor": 87.04
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_RONDOAÇO_3/3_194.66",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "RONDOAÇO",
+          "parcela": "3/3",
+          "valor": 194.66
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MATERIAL CONSTRU_2/2_165.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MATERIAL CONSTRU",
+          "parcela": "2/2",
+          "valor": 165.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_FARMACIA_2/4_98.55",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/4",
+          "valor": 98.55
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_BEBEDOURO_2/5_179.98",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BEBEDOURO",
+          "parcela": "2/5",
+          "valor": 179.98
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_ESCADA_2/5_139.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ESCADA",
+          "parcela": "2/5",
+          "valor": 139.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GOCASE_2/2_121.4",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GOCASE",
+          "parcela": "2/2",
+          "valor": 121.4
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__67.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__53.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 53.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GYMPASS__59.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GYMPASS",
+          "parcela": "X",
+          "valor": 59.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__156.64",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 156.64
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__10.49",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 10.49
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_PIX__50.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PIX",
+          "parcela": "X",
+          "valor": 50.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__115.04",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 115.04
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_ALMOCO__28.92",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ALMOCO",
+          "parcela": "X",
+          "valor": 28.92
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__67.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_PIX__0.19",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PIX",
+          "parcela": "X",
+          "valor": 0.19
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_PIX__0.13",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PIX",
+          "parcela": "X",
+          "valor": 0.13
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MC - CASA DA MADEIRA_1/3_145.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - CASA DA MADEIRA",
+          "parcela": "1/3",
+          "valor": 145.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MC - BARRIGA VERDE_1/3_237.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BARRIGA VERDE",
+          "parcela": "1/3",
+          "valor": 237.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__7.5",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 7.5
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__6.6",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 6.6
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MC - LONA__40.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - LONA",
+          "parcela": "X",
+          "valor": 40.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__71.76",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 71.76
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MC - BASE SÓLICA_1/3_217.92",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BASE SÓLICA",
+          "parcela": "1/3",
+          "valor": 217.92
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__69.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 69.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__13.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 13.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_SHOPPING__14.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPING",
+          "parcela": "X",
+          "valor": 14.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_ROUPA_1/3_126.67",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ROUPA",
+          "parcela": "1/3",
+          "valor": 126.67
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_ROUPA_1/2_75.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ROUPA",
+          "parcela": "1/2",
+          "valor": 75.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__20.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 20.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__67.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__40.27",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 40.27
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__28.88",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 28.88
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MC - RONSY_1/3_83.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - RONSY",
+          "parcela": "1/3",
+          "valor": 83.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_IG__11.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "IG",
+          "parcela": "X",
+          "valor": 11.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__67.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_DISNEY PLUS__9.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "DISNEY PLUS",
+          "parcela": "X",
+          "valor": 9.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_ENERGETICO__11.0",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ENERGETICO",
+          "parcela": "X",
+          "valor": 11.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_GASOLINA__67.9",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_DIESEL__12.58",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "DIESEL",
+          "parcela": "X",
+          "valor": 12.58
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JANEIRO_MERCADO__9.6",
+      "data": "01/01/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JANEIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 9.6
+        }
+      ]
+    },
+    {
+      "id": "rec_FEVEREIRO_JORGIANE",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "FEVEREIRO",
+          "descricao": "JORGIANE",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Jorgiane",
+          "valor": 1000.0
+        }
+      ]
+    },
+    {
+      "id": "rec_FEVEREIRO_FRANK",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "FEVEREIRO",
+          "descricao": "FRANK",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Frank",
+          "valor": 6100.0
+        }
+      ]
+    },
+    {
+      "id": "rec_FEVEREIRO_CLARICE",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "FEVEREIRO",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 444.87
+        }
+      ]
+    },
+    {
+      "id": "rec_FEVEREIRO_CLARICE",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "FEVEREIRO",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_FEVEREIRO_ALUGUEL",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "FEVEREIRO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_FEVEREIRO_PENSÃO",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "FEVEREIRO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 400.0
+        }
+      ]
+    },
+    {
+      "id": "fix_FEVEREIRO_FACULDADE",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "FEVEREIRO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_FEVEREIRO_CELULAR CLARO",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "FEVEREIRO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_FEVEREIRO_ENERGIA PVH",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "FEVEREIRO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 346.61
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_GRANCURSOS__49.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "X",
+          "valor": 49.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__111.66",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 111.66
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__184.68",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 184.68
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_ROUPAS LARISSA__509.49",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "ROUPAS LARISSA",
+          "parcela": "X",
+          "valor": 509.49
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_SKY__24.99",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SKY",
+          "parcela": "X",
+          "valor": 24.99
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__13.99",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 13.99
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__46.76",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 46.76
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_GASOLINA__69.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 69.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__17.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 17.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__115.42",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 115.42
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__15.92",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 15.92
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_FARMACIA__134.97",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "X",
+          "valor": 134.97
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_FARMACIA__20.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "X",
+          "valor": 20.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_FARMACIA__107.17",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "X",
+          "valor": 107.17
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_LANCHE__21.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "LANCHE",
+          "parcela": "X",
+          "valor": 21.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_FARMACIA__25.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "X",
+          "valor": 25.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_FARMACIA__40.98",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "X",
+          "valor": 40.98
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__16.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 16.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__20.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 20.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__10.85",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 10.85
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__18.02",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 18.02
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_MERCADO__113.26",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 113.26
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_FEVEREIRO_INTERNET OI__119.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_AMAZON PRIME_9/12_13.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "AMAZON PRIME",
+          "parcela": "9/12",
+          "valor": 13.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_HAVAN_4/4_221.59",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "4/4",
+          "valor": 221.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_FARMACIA_3/4_98.55",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "3/4",
+          "valor": 98.55
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_BEBEDOURO_3/5_179.98",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "CLARICE",
+          "descricao": "BEBEDOURO",
+          "parcela": "3/5",
+          "valor": 179.98
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_ESCADA_3/5_139.9",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ESCADA",
+          "parcela": "3/5",
+          "valor": 139.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MOVIDA_2/3_158.23",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MOVIDA",
+          "parcela": "2/3",
+          "valor": 158.23
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MC - CASA DA MADEIRA_2/3_145.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - CASA DA MADEIRA",
+          "parcela": "2/3",
+          "valor": 145.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MC - BARRIGA VERDE_2/3_237.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BARRIGA VERDE",
+          "parcela": "2/3",
+          "valor": 237.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MC - BASE SÓLICA_2/3_217.91",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BASE SÓLICA",
+          "parcela": "2/3",
+          "valor": 217.91
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_ROUPA_2/3_126.67",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ROUPA",
+          "parcela": "2/3",
+          "valor": 126.67
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_ROUPA_2/2_75.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ROUPA",
+          "parcela": "2/2",
+          "valor": 75.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MC - RONSY_2/3_83.33",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - RONSY",
+          "parcela": "2/3",
+          "valor": 83.33
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__12.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 12.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__93.84",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 93.84
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_PASSAGEM_1/3_120.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PASSAGEM",
+          "parcela": "1/3",
+          "valor": 120.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__36.66",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 36.66
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_TOALHAS HAVAN_1/4_124.99",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "TOALHAS HAVAN",
+          "parcela": "1/4",
+          "valor": 124.99
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_FARMACIA_1/2_99.5",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "1/2",
+          "valor": 99.5
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_CALÇA APUI_1/3_186.66",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "CALÇA APUI",
+          "parcela": "1/3",
+          "valor": 186.66
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__20.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 20.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__77.55",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 77.55
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__12.0",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 12.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__119.62",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 119.62
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_GASOLINA__67.71",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 67.71
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MESA_1/10_367.83",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "1/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO__57.96",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO",
+          "parcela": "X",
+          "valor": 57.96
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_PROTETOR DE CANTO__98.52",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PROTETOR DE CANTO",
+          "parcela": "X",
+          "valor": 98.52
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_ADOCICA__129.94",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ADOCICA",
+          "parcela": "X",
+          "valor": 129.94
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_GASOLINA__69.54",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "GASOLINA",
+          "parcela": "X",
+          "valor": 69.54
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_FEVEREIRO_MERCADO LIVRE__38.5",
+      "data": "01/02/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "FEVEREIRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MERCADO LIVRE",
+          "parcela": "X",
+          "valor": 38.5
+        }
+      ]
+    },
+    {
+      "id": "rec_MARÇO_JORGIANE",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "MARÇO",
+          "descricao": "JORGIANE",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Jorgiane",
+          "valor": 1000.0
+        }
+      ]
+    },
+    {
+      "id": "rec_MARÇO_FRANK",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "MARÇO",
+          "descricao": "FRANK",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Frank",
+          "valor": 5500.0
+        }
+      ]
+    },
+    {
+      "id": "rec_MARÇO_CLARICE",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "MARÇO",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 444.87
+        }
+      ]
+    },
+    {
+      "id": "fix_MARÇO_ALUGUEL",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MARÇO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_MARÇO_PENSÃO",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MARÇO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_MARÇO_FACULDADE",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MARÇO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_MARÇO_CELULAR CLARO",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MARÇO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MARÇO_GRANCURSOS_1/12_154.23",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "1/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MARÇO_INTERNET OI__119.9",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MARÇO_FARMACIA_1/2_74.0",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "1/2",
+          "valor": 74.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MARÇO_CRESCI E PERDI_1/2_99.5",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "CRESCI E PERDI",
+          "parcela": "1/2",
+          "valor": 99.5
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MARÇO_SHOPPEE_1/6_232.59",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "1/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_AMAZON PRIME_10/12_13.9",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "AMAZON PRIME",
+          "parcela": "10/12",
+          "valor": 13.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_FARMACIA_4/4_98.55",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "4/4",
+          "valor": 98.55
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_BEBEDOURO_4/5_179.98",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BEBEDOURO",
+          "parcela": "4/5",
+          "valor": 179.98
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_ESCADA_4/5_139.9",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "CLARICE",
+          "descricao": "ESCADA",
+          "parcela": "4/5",
+          "valor": 139.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MC - CASA DA MADEIRA_3/3_145.0",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - CASA DA MADEIRA",
+          "parcela": "3/3",
+          "valor": 145.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MC - BARRIGA VERDE_3/3_237.0",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BARRIGA VERDE",
+          "parcela": "3/3",
+          "valor": 237.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MC - BASE SÓLICA_3/3_217.91",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - BASE SÓLICA",
+          "parcela": "3/3",
+          "valor": 217.91
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_ROUPA_3/3_126.65",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ROUPA",
+          "parcela": "3/3",
+          "valor": 126.65
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MC - RONSY_3/3_83.0",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MC - RONSY",
+          "parcela": "3/3",
+          "valor": 83.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MOVIDA_3/3_158.23",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MOVIDA",
+          "parcela": "3/3",
+          "valor": 158.23
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_PASSAGEM_2/3_120.0",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PASSAGEM",
+          "parcela": "2/3",
+          "valor": 120.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_TOALHAS HAVAN_2/4_124.96",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "TOALHAS HAVAN",
+          "parcela": "2/4",
+          "valor": 124.96
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_FARMACIA_2/2_99.5",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/2",
+          "valor": 99.5
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_CALÇA APUI_2/3_186.66",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "CALÇA APUI",
+          "parcela": "2/3",
+          "valor": 186.66
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_MESA_2/10_367.83",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "2/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_HAVAN_1/7_85.7",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "1/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_FARMACIA_1/2_114.46",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "1/2",
+          "valor": 114.46
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_PKS_1/3_63.24",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PKS",
+          "parcela": "1/3",
+          "valor": 63.24
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MARÇO_BIBI_1/3_106.64",
+      "data": "01/03/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MARÇO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BIBI",
+          "parcela": "1/3",
+          "valor": 106.64
+        }
+      ]
+    },
+    {
+      "id": "rec_ABRIL_JORGIANE",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "ABRIL",
+          "descricao": "JORGIANE",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Jorgiane",
+          "valor": 1000.0
+        }
+      ]
+    },
+    {
+      "id": "rec_ABRIL_FRANK",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "ABRIL",
+          "descricao": "FRANK",
+          "tipoReceita": "Salário",
+          "recebidoPor": "Frank",
+          "valor": 7014.84
+        }
+      ]
+    },
+    {
+      "id": "rec_ABRIL_CLARICE",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "ABRIL",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 319.88
+        }
+      ]
+    },
+    {
+      "id": "fix_ABRIL_ALUGUEL",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "ABRIL",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PENDENTE",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_ABRIL_PENSÃO",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "ABRIL",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_ABRIL_FACULDADE",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "ABRIL",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_ABRIL_CELULAR CLARO",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "ABRIL",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_ABRIL_ENERGIA PVH - ATRASADA DE MARÇO",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "ABRIL",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH - ATRASADA DE MARÇO",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 448.7
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_GRANCURSOS_2/12_154.23",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "2/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_INTERNET OI__119.9",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_FARMACIA_2/2_74.0",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/2",
+          "valor": 74.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_CRESCI E PERDI_2/2_99.5",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "CRESCI E PERDI",
+          "parcela": "2/2",
+          "valor": 99.5
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_SHOPPEE_2/6_232.54",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "2/6",
+          "valor": 232.54
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_INTERNET OI__119.9",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_ABRIL_BELEZA_1/2_152.7",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "BELEZA",
+          "parcela": "1/2",
+          "valor": 152.7
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_AMAZON PRIME_11/12_13.9",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "AMAZON PRIME",
+          "parcela": "11/12",
+          "valor": 13.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_BEBEDOURO_5/5_179.98",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BEBEDOURO",
+          "parcela": "5/5",
+          "valor": 179.98
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_ESCADA_5/5_139.9",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "ESCADA",
+          "parcela": "5/5",
+          "valor": 139.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_PASSAGEM_3/3_120.0",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "CLARICE",
+          "descricao": "PASSAGEM",
+          "parcela": "3/3",
+          "valor": 120.0
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_TOALHAS HAVAN_3/4_124.96",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "TOALHAS HAVAN",
+          "parcela": "3/4",
+          "valor": 124.96
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_MODENA_2/2_100.24",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MODENA",
+          "parcela": "2/2",
+          "valor": 100.24
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_CALÇA APUI_3/3_186.66",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "CALÇA APUI",
+          "parcela": "3/3",
+          "valor": 186.66
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_MESA_3/10_367.83",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "3/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_HAVAN_2/7_85.7",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "2/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_FARMACIA_2/2_114.46",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/2",
+          "valor": 114.46
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_PKS_2/3_63.23",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PKS",
+          "parcela": "2/3",
+          "valor": 63.23
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_BIBI_2/3_106.63",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BIBI",
+          "parcela": "2/3",
+          "valor": 106.63
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_FARMACIA_1/3_156.69",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "1/3",
+          "valor": 156.69
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_FOX - TROCA DE OLEO_1/2_233.18",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FOX - TROCA DE OLEO",
+          "parcela": "1/2",
+          "valor": 233.18
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_MADEIRAS_1/2_111.2",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MADEIRAS",
+          "parcela": "1/2",
+          "valor": 111.2
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_ABRIL_FARMACIA_1/2_93.9",
+      "data": "01/04/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "ABRIL",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "1/2",
+          "valor": 93.9
+        }
+      ]
+    },
+    {
+      "id": "rec_MAIO_CLARICE",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "RECEITA",
+          "mes": "MAIO",
+          "descricao": "CLARICE",
+          "tipoReceita": "Reembolso Clarice",
+          "recebidoPor": "Família",
+          "valor": 124.99
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_ALUGUEL",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_PENSÃO",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_FACULDADE",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_CELULAR CLARO",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_ENERGIA PVH",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 500.0
+        }
+      ]
+    },
+    {
+      "id": "fix_MAIO_ENERGIA PVH",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "MAIO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 550.8
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MAIO_INTERNET OI__119.9",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MAIO_GRANCURSOS_3/12_154.23",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "3/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MAIO_BELEZA_2/2_152.7",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "BELEZA",
+          "parcela": "2/2",
+          "valor": 152.7
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_MAIO_SHOPPEE_2/6_232.59",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "2/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_AMAZON PRIME_12/12_13.9",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "AMAZON PRIME",
+          "parcela": "12/12",
+          "valor": 13.9
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_TOALHAS HAVAN_4/4_124.99",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "TOALHAS HAVAN",
+          "parcela": "4/4",
+          "valor": 124.99
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_MESA_4/10_367.83",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "4/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_HAVAN_3/7_85.7",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "CLARICE",
+          "descricao": "HAVAN",
+          "parcela": "3/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_PKS_3/3_63.24",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "PKS",
+          "parcela": "3/3",
+          "valor": 63.24
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_BIBI_3/3_106.64",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "BIBI",
+          "parcela": "3/3",
+          "valor": 106.64
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_FARMACIA_2/3_156.69",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/3",
+          "valor": 156.69
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_FOX - TROCA DE OLEO_2/2_233.18",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FOX - TROCA DE OLEO",
+          "parcela": "2/2",
+          "valor": 233.18
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_MADEIRAS_2/2_111.2",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MADEIRAS",
+          "parcela": "2/2",
+          "valor": 111.2
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_MAIO_FARMACIA_2/2_93.9",
+      "data": "01/05/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "MAIO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "2/2",
+          "valor": 93.9
+        }
+      ]
+    },
+    {
+      "id": "fix_JUNHO_ALUGUEL",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JUNHO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JUNHO_PENSÃO",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JUNHO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 400.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JUNHO_FACULDADE",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JUNHO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_JUNHO_CELULAR CLARO",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JUNHO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_JUNHO_ENERGIA PVH",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JUNHO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 500.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JUNHO_INTERNET OI__119.9",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JUNHO_GRANCURSOS_4/12_154.23",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "4/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JUNHO_SHOPPEE_3/6_232.59",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "3/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JUNHO_MESA_5/10_367.83",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "5/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JUNHO_HAVAN_4/7_85.7",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "4/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JUNHO_FARMACIA_3/3_156.69",
+      "data": "01/06/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JUNHO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "FARMACIA",
+          "parcela": "3/3",
+          "valor": 156.69
+        }
+      ]
+    },
+    {
+      "id": "fix_JULHO_ALUGUEL",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JULHO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JULHO_PENSÃO",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JULHO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 400.0
+        }
+      ]
+    },
+    {
+      "id": "fix_JULHO_FACULDADE",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JULHO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 785.41
+        }
+      ]
+    },
+    {
+      "id": "fix_JULHO_CELULAR CLARO",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JULHO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_JULHO_ENERGIA PVH",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "JULHO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 500.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JULHO_INTERNET OI__119.9",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JULHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JULHO_GRANCURSOS_5/12_154.23",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JULHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "5/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_JULHO_SHOPPEE_4/6_232.59",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JULHO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "4/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JULHO_MESA_6/10_367.83",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JULHO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "6/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_JULHO_HAVAN_5/7_85.7",
+      "data": "01/07/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "JULHO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "5/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "fix_AGOSTO_ALUGUEL",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "AGOSTO",
+          "categoria": "Moradia",
+          "descricao": "ALUGUEL",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 1300.0
+        }
+      ]
+    },
+    {
+      "id": "fix_AGOSTO_PENSÃO",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "AGOSTO",
+          "categoria": "Outros",
+          "descricao": "PENSÃO",
+          "vencimento": "1",
+          "situacao": "PAGO",
+          "valor": 400.0
+        }
+      ]
+    },
+    {
+      "id": "fix_AGOSTO_FACULDADE",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "AGOSTO",
+          "categoria": "Educação",
+          "descricao": "FACULDADE",
+          "vencimento": "13",
+          "situacao": "PAGO",
+          "valor": 800.0
+        }
+      ]
+    },
+    {
+      "id": "fix_AGOSTO_CELULAR CLARO",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "AGOSTO",
+          "categoria": "Internet",
+          "descricao": "CELULAR CLARO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 34.27
+        }
+      ]
+    },
+    {
+      "id": "fix_AGOSTO_ENERGIA PVH",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "AGOSTO",
+          "categoria": "Energia",
+          "descricao": "ENERGIA PVH",
+          "vencimento": "6",
+          "situacao": "PAGO",
+          "valor": 500.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_AGOSTO_INTERNET OI__119.9",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "AGOSTO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_AGOSTO_GRANCURSOS_6/12_154.23",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "AGOSTO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "6/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_AGOSTO_SHOPPEE_5/6_232.59",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "AGOSTO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "5/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_AGOSTO_MESA_7/10_367.83",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "AGOSTO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "7/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_AGOSTO_HAVAN_6/7_85.7",
+      "data": "01/08/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "AGOSTO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "6/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "fix_SETEMBRO_CARTÕES DE CRÉDITO",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "SETEMBRO",
+          "categoria": "Outros",
+          "descricao": "CARTÕES DE CRÉDITO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 1253.29
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_SETEMBRO_INTERNET OI__119.9",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "SETEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_SETEMBRO_GRANCURSOS_7/12_154.23",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "SETEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "7/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_SETEMBRO_SHOPPEE_6/6_232.59",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "SETEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "SHOPPEE",
+          "parcela": "6/6",
+          "valor": 232.59
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_SETEMBRO_MESA_8/10_367.83",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "SETEMBRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "8/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_SETEMBRO_HAVAN_7/7_85.7",
+      "data": "01/09/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "SETEMBRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "HAVAN",
+          "parcela": "7/7",
+          "valor": 85.7
+        }
+      ]
+    },
+    {
+      "id": "fix_OUTUBRO_CARTÕES DE CRÉDITO",
+      "data": "01/10/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "OUTUBRO",
+          "categoria": "Outros",
+          "descricao": "CARTÕES DE CRÉDITO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 935.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_OUTUBRO_INTERNET OI__119.9",
+      "data": "01/10/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "OUTUBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_OUTUBRO_GRANCURSOS_8/12_154.23",
+      "data": "01/10/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "OUTUBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "8/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_OUTUBRO_MESA_9/10_367.83",
+      "data": "01/10/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "OUTUBRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "9/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "fix_NOVEMBRO_CARTÕES DE CRÉDITO",
+      "data": "01/11/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "NOVEMBRO",
+          "categoria": "Outros",
+          "descricao": "CARTÕES DE CRÉDITO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 935.0
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_NOVEMBRO_INTERNET OI__119.9",
+      "data": "01/11/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "NOVEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_NOVEMBRO_GRANCURSOS_9/12_154.23",
+      "data": "01/11/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "NOVEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "9/12",
+          "valor": 154.23
+        }
+      ]
+    },
+    {
+      "id": "cc_fk_NOVEMBRO_MESA_10/10_367.83",
+      "data": "01/11/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "NOVEMBRO",
+          "cartao": "FRANK",
+          "titular": "PROPRIO",
+          "descricao": "MESA",
+          "parcela": "10/10",
+          "valor": 367.83
+        }
+      ]
+    },
+    {
+      "id": "fix_DEZEMBRO_CARTÕES DE CRÉDITO",
+      "data": "01/12/2026",
+      "itens": [
+        {
+          "tipo": "FIXO",
+          "mes": "DEZEMBRO",
+          "categoria": "Outros",
+          "descricao": "CARTÕES DE CRÉDITO",
+          "vencimento": "",
+          "situacao": "PAGO",
+          "valor": 274.13
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_DEZEMBRO_INTERNET OI__119.9",
+      "data": "01/12/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "DEZEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "INTERNET OI",
+          "parcela": "X",
+          "valor": 119.9
+        }
+      ]
+    },
+    {
+      "id": "cc_jo_DEZEMBRO_GRANCURSOS_10/12_154.23",
+      "data": "01/12/2026",
+      "itens": [
+        {
+          "tipo": "CARTAO",
+          "mes": "DEZEMBRO",
+          "cartao": "JORGIANE",
+          "titular": "PROPRIO",
+          "descricao": "GRANCURSOS",
+          "parcela": "10/12",
+          "valor": 154.23
+        }
+      ]
+    }
+  ],
+  "atrasadas": [
+    {
+      "desc": "IPTU MANAUS/JULHO 2023",
+      "val": 90.23,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "IPTU MANAUS/NOVEMBRO 2023",
+      "val": 21.64,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "BEMOL/SETEMBRO",
+      "val": 233.31,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "BEMOL/OUTUBRO",
+      "val": 213.55,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "BEMOL/NOVEMBRO",
+      "val": 193.12,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "BEMOL/JANEIRO",
+      "val": 152.94,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "BEMOL/ FEVEREIRO",
+      "val": 142.19,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "ENERGIA MANAUS/MAIO",
+      "val": 33.35,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "ENERGIA MANAUS/JUNHO",
+      "val": 33.35,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "ENERGIA MANAUS/JULHO",
+      "val": 33.35,
+      "sit": "PENDENTE"
+    },
+    {
+      "desc": "ENERGIA MANAUS/AGOSTO",
+      "val": 39.19,
+      "sit": "PENDENTE"
+    }
+  ]
+}
