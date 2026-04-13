@@ -33,7 +33,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 /* ── HEADER ── */
 .hdr{background:var(--s1);border-bottom:1px solid var(--border);padding:.75rem 1.1rem 0;flex-shrink:0;}
 .hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem;}
-.logo-main{font-size:18px;font-weight:800;letter-spacing:-.4px;line-height:1;}
+.logo-main{font-size:20px;font-weight:800;letter-spacing:-.4px;line-height:1;}
 .logo-main em{font-style:normal;color:var(--jo);}
 .logo-sub{font-size:11px;color:var(--t3);font-weight:700;letter-spacing:.06em;margin-top:1px;}
 .hdr-right{display:flex;align-items:center;gap:8px;}
@@ -46,7 +46,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 /* ── NAV ── */
 .nav{display:flex;overflow-x:auto;scrollbar-width:none;}
 .nav::-webkit-scrollbar{display:none;}
-.ntab{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:8px 13px;font-size:12px;font-weight:700;color:var(--t3);border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .15s;letter-spacing:.04em;}
+.ntab{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:9px 13px;font-size:13px;font-weight:700;color:var(--t3);border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .15s;letter-spacing:.04em;}
 .ntab svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
 .ntab.on{color:var(--jo);border-color:var(--jo);}
 
@@ -57,7 +57,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 
 /* ── MONTH BAR ── */
 .mbar{display:flex;align-items:center;gap:10px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:.6rem .9rem;margin-bottom:1rem;}
-.mbar select{flex:1;background:transparent;border:none;color:var(--text);font-family:var(--font);font-size:15px;font-weight:700;outline:none;cursor:pointer;}
+.mbar select{flex:1;background:transparent;border:none;color:var(--text);font-family:var(--font);font-size:16px;font-weight:700;outline:none;cursor:pointer;}
 .mbar select option{background:var(--s2);}
 .mbar-yr{font-size:12px;color:var(--t3);font-weight:700;}
 
@@ -74,8 +74,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .kc.var::before{background:linear-gradient(90deg,var(--var),var(--var2));}
 .kc.warn::before{background:linear-gradient(90deg,var(--warn),#c89020);}
 .kc.danger::before{background:linear-gradient(90deg,var(--danger),#c02020);}
-.klbl{font-size:10px;font-weight:700;color:var(--t2);letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px;}
-.kval{font-family:var(--mono);font-size:19px;font-weight:500;line-height:1;}
+.klbl{font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;}
+.kval{font-family:var(--mono);font-size:21px;font-weight:500;line-height:1;}
 .kval.jo{color:var(--jo);}
 .kval.fk{color:var(--fk);}
 .kval.cl{color:var(--cl);}
@@ -86,7 +86,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .kval.neg{color:var(--danger);}
 .ksub{font-size:10px;color:var(--t3);font-family:var(--mono);margin-top:3px;}
 /* STATUS BADGE */
-.kstatus{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;letter-spacing:.02em;}
+.kstatus{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:13px;font-weight:700;padding:4px 10px;border-radius:99px;letter-spacing:.02em;}
 .kstatus.pago{background:var(--rec-dim);color:var(--rec);border:1px solid rgba(67,232,160,.2);}
 .kstatus.pendente{background:var(--warn-dim);color:var(--warn);border:1px solid rgba(240,192,67,.2);}
 /* LIMIT BAR */
@@ -130,9 +130,9 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .ic.adiado{border-left:4px solid var(--warn);opacity:.75;}
 .ic.atrasado{border-left:4px solid var(--danger);}
 .ibody{flex:1;min-width:0;}
-.iname{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.iname{font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .ipills{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
-.pill{font-size:11px;font-family:var(--mono);padding:3px 8px;border-radius:99px;font-weight:500;}
+.pill{font-size:12px;font-family:var(--mono);padding:4px 9px;border-radius:99px;font-weight:500;}
 .p-jo{background:var(--jo-dim);color:var(--jo);}
 .p-fk{background:var(--fk-dim);color:var(--fk);}
 .p-cl{background:var(--cl-dim);color:var(--cl);}
@@ -145,7 +145,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .parc-row{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;}
 .pp{font-size:10px;font-family:var(--mono);padding:2px 6px;border-radius:99px;background:var(--s3);color:var(--t3);}
 .pp.cur{background:var(--jo-dim);color:var(--jo);}
-.iamt{font-family:var(--mono);font-size:14px;white-space:nowrap;padding-top:2px;flex-shrink:0;font-weight:500;}
+.iamt{font-family:var(--mono);font-size:15px;white-space:nowrap;padding-top:2px;flex-shrink:0;font-weight:500;}
 .irm{background:none;border:none;color:var(--t4);font-size:20px;cursor:pointer;line-height:1;flex-shrink:0;padding:0;}
 .irm:active{color:var(--danger);}
 .cl-badge{display:inline-flex;align-items:center;gap:4px;background:var(--cl-dim);border:1px solid rgba(240,168,67,.25);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--cl);font-weight:700;margin-top:5px;}
@@ -160,13 +160,13 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .fr.c3{grid-template-columns:1fr 1fr 1fr;}
 .fld{display:flex;flex-direction:column;gap:4px;}
 .fld label{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;}
-.fld input,.fld select,.fld textarea{background:var(--s2);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-family:var(--font);font-size:14px;padding:9px 11px;outline:none;width:100%;transition:border-color .15s;}
+.fld input,.fld select,.fld textarea{background:var(--s2);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-family:var(--font);font-size:15px;padding:10px 12px;outline:none;width:100%;transition:border-color .15s;}
 .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--jo);}
 .fld select option{background:var(--s2);}
 .fld textarea{resize:none;min-height:90px;font-family:var(--mono);font-size:13px;line-height:1.65;}
 
 /* ── BUTTONS ── */
-.btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:13px;border-radius:var(--r);font-family:var(--font);font-size:14px;font-weight:700;cursor:pointer;border:none;transition:opacity .15s;letter-spacing:.02em;}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:14px;border-radius:var(--r);font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;border:none;transition:opacity .15s;letter-spacing:.02em;}
 .btn:active{opacity:.75;}
 .btn-primary{background:var(--jo);color:#07090f;}
 .btn-outline{background:transparent;border:1px solid var(--jo);color:var(--jo);}
@@ -188,7 +188,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 
 /* ── SECTION DIVIDER ── */
 .sdiv{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--border);margin-bottom:.5rem;}
-.sdiv-lbl{font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.07em;text-transform:uppercase;}
+.sdiv-lbl{font-size:12px;font-weight:700;color:var(--t2);letter-spacing:.07em;text-transform:uppercase;}
 .sdiv-val{font-family:var(--mono);font-size:12px;}
 
 /* ── SETTINGS ── */
@@ -201,8 +201,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 /* ── PENDING LIST on dash ── */
 .pend-list{display:flex;flex-direction:column;gap:6px;margin-top:.6rem;}
 .pend-item{display:flex;align-items:center;justify-content:space-between;background:var(--s2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:var(--r2);padding:.6rem .9rem;}
-.pend-name{font-size:13px;font-weight:700;}
-.pend-val{font-family:var(--mono);font-size:13px;color:var(--warn);}
+.pend-name{font-size:14px;font-weight:700;}
+.pend-val{font-family:var(--mono);font-size:14px;color:var(--warn);}
 
 /* ── TOAST ── */
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--s2);border:1px solid var(--border);border-radius:99px;padding:10px 20px;font-size:13px;font-weight:700;white-space:nowrap;transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:9999;pointer-events:none;}
@@ -224,7 +224,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .modal{background:var(--s1);border:1px solid var(--border);border-top:3px solid var(--jo);border-radius:var(--r) var(--r) 0 0;width:100%;max-width:500px;padding:1.25rem 1.1rem 2.5rem;max-height:78vh;overflow-y:auto;}
 .modal-ttl{font-size:16px;font-weight:800;margin-bottom:1rem;}
 
-.empty{text-align:center;color:var(--t3);font-size:14px;padding:2.5rem 1rem;line-height:1.9;}
+.empty{text-align:center;color:var(--t3);font-size:15px;padding:2.5rem 1rem;line-height:1.9;}
 </style>
 </head>
 <body>
@@ -256,36 +256,60 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 <!-- CARTÕES -->
 <div class="sc" id="sc-cc"><div class="sc-inner">
   <div class="mbar"><select id="cc-mes" onchange="renderCC()"></select><span class="mbar-yr">2026</span></div>
-  <div class="fld" style="margin-bottom:.5rem;"><label>Mensagens do WhatsApp</label>
-    <textarea id="wpp" placeholder="[11/04/2026, 10:30] Frank: mercado 150 jo&#10;[11/04/2026, 10:31] Frank: farmácia 89,90 frank&#10;[11/04/2026, 10:32] Jorgiane: sky 250 duas vezes jorgiane&#10;[11/04/2026, 10:33] Frank: cimento 300 3 vezes frank&#10;[11/04/2026, 10:34] Frank: roupa 200 clarice frank"></textarea>
+
+  <!-- FATURAS RESUMO - sempre visível no topo -->
+  <div id="cc-faturas-top"></div>
+
+  <!-- SUB-TABS FATURA / LANÇAR -->
+  <div style="display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:.75rem;">
+    <button id="cctab-lancar" onclick="setCCTab('lancar')" style="flex:1;padding:9px;background:none;border:none;border-bottom:3px solid var(--jo);color:var(--jo);font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.03em;">Lançar</button>
+    <button id="cctab-fatura-jo" onclick="setCCTab('fatura-jo')" style="flex:1;padding:9px;background:none;border:none;border-bottom:3px solid transparent;color:var(--t3);font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.03em;">Fatura Jô</button>
+    <button id="cctab-fatura-fk" onclick="setCCTab('fatura-fk')" style="flex:1;padding:9px;background:none;border:none;border-bottom:3px solid transparent;color:var(--t3);font-family:var(--font);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.03em;">Fatura Frank</button>
   </div>
-  <p style="font-size:10px;color:var(--t3);margin-bottom:.5rem;line-height:1.6;">O app lê o texto após os <b style="color:var(--jo)">:</b> (dois pontos). Inclua <b style="color:var(--cl)">clarice</b> + cartão para compras da sogra.</p>
-  <div class="brow">
-    <button class="btn btn-primary" onclick="parseCC()" style="flex:2;">Analisar mensagens</button>
-    <button class="btn btn-outline" onclick="toggleF('mbox-cc')" style="flex:1;">+ Manual</button>
+
+  <!-- PAINEL LANÇAR -->
+  <div id="cc-panel-lancar">
+    <div class="fld" style="margin-bottom:.5rem;"><label>Mensagens do WhatsApp</label>
+      <textarea id="wpp" placeholder="[11/04/2026, 10:30] Frank: mercado 150 jo&#10;farmácia 89,90 frank&#10;sky 250 duas vezes jorgiane&#10;cimento 300 3 vezes frank&#10;roupa 200 clarice frank"></textarea>
+    </div>
+    <p style="font-size:11px;color:var(--t3);margin-bottom:.6rem;line-height:1.6;">O app lê o texto após os <b style="color:var(--jo)">:</b>. Inclua <b style="color:var(--cl)">clarice</b> + cartão para compras da sogra.</p>
+    <div class="brow">
+      <button class="btn btn-primary" onclick="parseCC()" style="flex:2;">Analisar mensagens</button>
+      <button class="btn btn-outline" onclick="toggleF('mbox-cc')" style="flex:1;">+ Manual</button>
+    </div>
+    <div class="fbox" id="mbox-cc" style="margin-top:.5rem;">
+      <div class="fr"><div class="fld"><label>Descrição</label><input id="cc-desc" placeholder="ex: MERCADO"></div></div>
+      <div class="fr c2">
+        <div class="fld"><label>Valor total R$</label><input type="number" id="cc-val" placeholder="0,00" step="0.01" min="0"></div>
+        <div class="fld"><label>Nº parcelas</label><input type="number" id="cc-parc" value="1" min="1"></div>
+      </div>
+      <div class="fr c2">
+        <div class="fld"><label>Cartão</label><select id="cc-cart"><option value="jo">Jorgiane</option><option value="fk">Frank</option></select></div>
+        <div class="fld"><label>Titular</label><select id="cc-tit"><option value="">Próprio</option><option value="clarice">Clarice</option></select></div>
+      </div>
+      <button class="btn-add" onclick="addManualCC()">Adicionar</button>
+    </div>
+    <!-- STATUS CARTÕES -->
+    <div class="fr c2" style="margin:.75rem 0 .4rem;">
+      <div class="fld"><label>Status Cartão Jorgiane</label>
+        <select id="cc-status-jo" onchange="saveStatus('jo',this.value)"><option value="PENDENTE">Pendente</option><option value="PAGO">Pago</option></select>
+      </div>
+      <div class="fld"><label>Status Cartão Frank</label>
+        <select id="cc-status-fk" onchange="saveStatus('fk',this.value)"><option value="PENDENTE">Pendente</option><option value="PAGO">Pago</option></select>
+      </div>
+    </div>
+    <div id="cc-body"></div>
   </div>
-  <div class="fbox" id="mbox-cc" style="margin-top:.5rem;">
-    <div class="fr"><div class="fld"><label>Descrição</label><input id="cc-desc" placeholder="ex: MERCADO"></div></div>
-    <div class="fr c2">
-      <div class="fld"><label>Valor total R$</label><input type="number" id="cc-val" placeholder="0,00" step="0.01" min="0"></div>
-      <div class="fld"><label>Nº parcelas</label><input type="number" id="cc-parc" value="1" min="1"></div>
-    </div>
-    <div class="fr c2">
-      <div class="fld"><label>Cartão</label><select id="cc-cart"><option value="jo">Jorgiane</option><option value="fk">Frank</option></select></div>
-      <div class="fld"><label>Titular</label><select id="cc-tit"><option value="">Próprio</option><option value="clarice">Clarice</option></select></div>
-    </div>
-    <button class="btn-add" onclick="addManualCC()">Adicionar</button>
+
+  <!-- PAINEL FATURA JORGIANE -->
+  <div id="cc-panel-fatura-jo" style="display:none;">
+    <div id="cc-fatura-jo-body"></div>
   </div>
-  <!-- STATUS CARTÕES -->
-  <div class="fr c2" style="margin:.75rem 0 .4rem;">
-    <div class="fld"><label>Status Cartão Jorgiane</label>
-      <select id="cc-status-jo" onchange="saveStatus('jo',this.value)"><option value="PENDENTE">Pendente</option><option value="PAGO">Pago</option></select>
-    </div>
-    <div class="fld"><label>Status Cartão Frank</label>
-      <select id="cc-status-fk" onchange="saveStatus('fk',this.value)"><option value="PENDENTE">Pendente</option><option value="PAGO">Pago</option></select>
-    </div>
+
+  <!-- PAINEL FATURA FRANK -->
+  <div id="cc-panel-fatura-fk" style="display:none;">
+    <div id="cc-fatura-fk-body"></div>
   </div>
-  <div id="cc-body"></div>
 </div></div>
 
 <!-- FIXOS -->
@@ -526,6 +550,10 @@ function goTab(t){
   document.getElementById('sc-'+t).classList.add('on');
   const renders={dash:renderDash,cc:renderCC,fix:renderFix,var:renderVar,rec:renderRec,hist:renderHist};
   renders[t]?.();
+  if(t!=='dash') renderDash();
+  // Always keep dashboard in sync when returning to it
+  if(t!=='dash') { S._dashDirty=true; }
+  if(t==='dash' && S._dashDirty) { S._dashDirty=false; }
 }
 function toggleF(id){document.getElementById(id).classList.toggle('open');}
 function closeModal(id){document.getElementById(id).classList.remove('show');}
@@ -806,6 +834,120 @@ function renderCC(){
     html='<div class="empty">Nenhum lançamento de cartão neste mês.<br>Cole mensagens acima ou adicione manualmente.</div>';
   else html+=`<button class="btn btn-send" onclick="enviar('cc')">Salvar no Google Sheets →</button>`;
   document.getElementById('cc-body').innerHTML=html;
+
+  // ── Fatura top summary (always visible) ──
+  var joStat=S.status&&S.status.joCC||'PENDENTE';
+  var fkStat=S.status&&S.status.fkCC||'PENDENTE';
+  var topHtml='<div class="g2" style="margin-bottom:.75rem;">';
+  topHtml+='<div class="kc jo" style="cursor:pointer;" onclick="setCCTab(\'fatura-jo\')">';
+  topHtml+='<div class="klbl">FATURA JORGIANE</div>';
+  topHtml+='<div class="kval jo">'+fmt(tJo+tClJo)+'</div>';
+  topHtml+=(joStat==='PAGO'?'<div class="kstatus pago">✓ Pago</div>':'<div class="kstatus pendente">⏳ Pendente</div>');
+  topHtml+='<div style="font-size:10px;color:var(--t3);margin-top:4px;">ver fatura →</div></div>';
+  topHtml+='<div class="kc fk" style="cursor:pointer;" onclick="setCCTab(\'fatura-fk\')">';
+  topHtml+='<div class="klbl">FATURA FRANK</div>';
+  topHtml+='<div class="kval fk">'+fmt(tFk+tClFk)+'</div>';
+  topHtml+=(fkStat==='PAGO'?'<div class="kstatus pago">✓ Pago</div>':'<div class="kstatus pendente">⏳ Pendente</div>');
+  topHtml+='<div style="font-size:10px;color:var(--t3);margin-top:4px;">ver fatura →</div></div>';
+  topHtml+='</div>';
+  if(totCl) topHtml+='<div class="kc cl" style="margin-bottom:.75rem;"><div class="klbl">TOTAL CLARICE — reembolso</div><div class="kval cl">'+fmt(totCl)+'</div></div>';
+  var ftop=document.getElementById('cc-faturas-top');
+  if(ftop)ftop.innerHTML=topHtml;
+
+  // ── Render fatura Jorgiane ──
+  renderFaturaDetalhe('jo', grp.jo.concat(grp.cljo), tJo, tClJo, m, limJo, joStat);
+  renderFaturaDetalhe('fk', grp.fk.concat(grp.clfk), tFk, tClFk, m, limFk, fkStat);
+}
+
+function renderFaturaDetalhe(cart, items, total, totalCl, m, lim, status){
+  var elId='cc-fatura-'+cart+'-body';
+  var el=document.getElementById(elId);
+  if(!el)return;
+  var color=cart==='jo'?'jo':'fk';
+  var label=cart==='jo'?'JORGIANE':'FRANK';
+  var html='';
+
+  // Header card
+  html+='<div class="kc '+color+'" style="margin-bottom:.75rem;">';
+  html+='<div class="klbl">FATURA '+label+' — '+MF[m]+'</div>';
+  html+='<div class="kval '+color+'" style="font-size:24px;">'+fmt(total+totalCl)+'</div>';
+  html+=(status==='PAGO'?'<div class="kstatus pago" onclick="toggleStatus(\''+cart+'\')">✓ Pago</div>':'<div class="kstatus pendente" style="cursor:pointer;" onclick="toggleStatus(\''+cart+'\')">⏳ Pendente — toque para marcar pago</div>');
+  if(totalCl) html+='<div class="ksub" style="margin-top:6px;">inclui Clarice: '+fmt(totalCl)+'</div>';
+  if(lim){
+    var used=total+totalCl;
+    var pct=Math.min(used/lim*100,100);
+    var fill=used>lim?'var(--danger)':pct>80?'var(--warn)':pct>60?'var(--cl)':'var(--'+color+')';
+    html+='<div class="lbar"><div class="lbar-bg"><div class="lbar-fill" style="width:'+pct+'%;background:'+fill+'"></div></div><div class="lbar-txt"><span>'+pct.toFixed(0)+'% do limite</span><span>'+(used>lim?'EXCEDIDO':'falta '+fmt(lim-used))+'</span></div></div>';
+  }
+  html+='</div>';
+
+  if(!items.length){
+    html+='<div class="empty">Nenhum gasto neste cartão neste mês.</div>';
+    el.innerHTML=html; return;
+  }
+
+  // Table header
+  html+='<div style="background:var(--s2);border-radius:var(--r) var(--r) 0 0;padding:.6rem .9rem;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border);border-bottom:none;">';
+  html+='<span style="font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.08em;">DESCRIÇÃO</span>';
+  html+='<span style="font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.08em;">VALOR</span></div>';
+
+  // Items list as invoice
+  html+='<div style="border:1px solid var(--border);border-radius:0 0 var(--r) var(--r);overflow:hidden;">';
+  items.forEach(function(it,i){
+    var vp=it.vp||parseFloat((it.vt/it.parc).toFixed(2));
+    var isCl=it.clarice;
+    var bg=i%2===0?'var(--s1)':'var(--s2)';
+    var row='<div style="display:flex;align-items:center;gap:8px;padding:.65rem .9rem;background:'+bg+';border-bottom:1px solid var(--border);">';
+    // color dot
+    row+='<div style="width:8px;height:8px;border-radius:50%;background:'+(isCl?'var(--cl)':'var(--'+color+')');
+    row+='flex-shrink:0;"></div>';
+    // desc + pills
+    row+='<div style="flex:1;min-width:0;">';
+    row+='<div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+it.desc+'</div>';
+    row+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;">';
+    if(isCl) row+='<span class="pill p-cl">CLARICE</span>';
+    if(!it.avista) row+='<span class="pill p-g">'+it.parc+'x</span>';
+    else row+='<span class="pill p-g">à vista</span>';
+    if(it.parc>1) row+='<span class="pill p-g">parcela '+(m-it.mi+1)+'/'+it.parc+'</span>';
+    row+='</div></div>';
+    // value
+    row+='<div style="text-align:right;flex-shrink:0;">';
+    row+='<div style="font-family:var(--mono);font-size:14px;font-weight:500;">'+fmt(vp)+'</div>';
+    if(it.parc>1) row+='<div style="font-size:10px;color:var(--t3);font-family:var(--mono);">total: '+fmt(it.vt)+'</div>';
+    row+='</div>';
+    row+='</div>';
+    html+=row;
+  });
+  html+='</div>';
+
+  // Total row
+  html+='<div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem .9rem;background:var(--s3);border-radius:var(--r2);margin-top:.5rem;">';
+  html+='<span style="font-size:13px;font-weight:700;color:var(--t2);">TOTAL DA FATURA</span>';
+  html+='<span style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--'+color+');">'+fmt(total+totalCl)+'</span>';
+  html+='</div>';
+
+  html+='<button class="btn btn-send" onclick="enviar(\'cc\')" style="margin-top:.75rem;">Salvar no Google Sheets →</button>';
+  el.innerHTML=html;
+}
+
+// current CC sub-tab
+var _ccTab='lancar';
+function setCCTab(tab){
+  _ccTab=tab;
+  var panels=['lancar','fatura-jo','fatura-fk'];
+  panels.forEach(function(p){
+    var el=document.getElementById('cc-panel-'+p);
+    if(el) el.style.display=p===tab?'block':'none';
+  });
+  var tabs=['lancar','fatura-jo','fatura-fk'];
+  var colors={lancar:'var(--jo)','fatura-jo':'var(--jo)','fatura-fk':'var(--fk)'};
+  tabs.forEach(function(t){
+    var btn=document.getElementById('cctab-'+t);
+    if(!btn)return;
+    var isActive=t===tab;
+    btn.style.borderBottomColor=isActive?(colors[t]||'var(--jo)'):'transparent';
+    btn.style.color=isActive?(colors[t]||'var(--jo)'):'var(--t3)';
+  });
 }
 
 /* ────────────────────────────────────────────────
