@@ -1187,12 +1187,18 @@ async function flushSync(){
 
 async function pushToSheets(itens){
   if(!itens.length)return;
-  const dot=document.getElementById('sdot'); dot.className='sdot syncing';
+  var dot=document.getElementById('sdot'); dot.className='sdot syncing';
   document.getElementById('sstat').textContent='SYNC';
   try{
-    await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({itens})});
+    // Send as text/plain to avoid CORS preflight - Apps Script handles it
+    await fetch(GAS,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify({itens:itens})
+    });
     dot.className='sdot'; document.getElementById('sstat').textContent='OK';
-    setTimeout(()=>{document.getElementById('sstat').textContent='SYNC';},2000);
+    setTimeout(function(){document.getElementById('sstat').textContent='SYNC';},2000);
   }catch(e){dot.className='sdot off';document.getElementById('sstat').textContent='ERRO';}
 }
 
@@ -1212,7 +1218,7 @@ async function enviar(tipo){
   if(!itens.length){toast('Nada para salvar','err');return;}
   document.getElementById('overlay').classList.add('show');
   try{
-    await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({itens})});
+    await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:itens})});
     S.hist.unshift({id:Date.now(),data:new Date().toLocaleDateString('pt-BR'),itens});
     S.hist=S.hist.slice(0,500);
     if(tipo==='cc')S.cc=[];
@@ -1294,7 +1300,7 @@ function importarJSON(input){
       const batches=[];for(let i=0;i<allItens.length;i+=100)batches.push(allItens.slice(i,i+100));
       let sent=0;
       for(const batch of batches){
-        try{await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({itens:batch})});sent+=batch.length;}catch(e){}
+        try{await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:batch})});sent+=batch.length;}catch(e){}
       }
       status.innerHTML=`<span style="color:var(--rec)">✅ Importação e sincronização concluídas!</span><br><span style="color:var(--t2)">${nCC} lançamentos de cartão<br>${nFix} fixo(s) · ${nRec} receita(s) · ${nHist} registros<br>${sent} itens enviados ao Google Sheets</span>`;
       renderDash();renderCC();renderFix();renderRec();renderVar();renderHist();
@@ -1333,8 +1339,12 @@ function viradaAno(){
 
 async function checkConn(){
   const dot=document.getElementById('sdot'),st=document.getElementById('sstat');
-  try{await fetch(GAS+'?p=1',{mode:'no-cors'});dot.className='sdot';st.textContent='SYNC';}
-  catch{dot.className='sdot off';st.textContent='ERRO';}
+  var connScript=document.createElement('script');
+  var connCb='_connCb'+Date.now();
+  window[connCb]=function(d){delete window[connCb];dot.className='sdot';st.textContent='SYNC';if(connScript.parentNode)connScript.parentNode.removeChild(connScript);};
+  setTimeout(function(){if(window[connCb]){delete window[connCb];dot.className='sdot off';st.textContent='ERRO';if(connScript.parentNode)connScript.parentNode.removeChild(connScript);}},5000);
+  connScript.src=GAS+'?action=ping&callback='+connCb+'&_='+Date.now();
+  document.head.appendChild(connScript);
 }
 
 function init(){
@@ -1360,28 +1370,35 @@ function startPolling(){
 async function pollRemote(){
   var dot=document.getElementById('sdot');
   var st=document.getElementById('sstat');
-  try{
-    var resp=await fetch(GAS+'?action=read',{mode:'cors',cache:'no-store'});
-    if(!resp.ok)return;
-    var data=await resp.json();
-    if(!data||!data.rows) return;
-    // Hash check to avoid unnecessary re-renders
-    var hash=JSON.stringify(data.rows).length+'_'+data.rows.length;
-    if(hash===_lastPollHash)return;
-    _lastPollHash=hash;
-    // Merge remote data into local hist (remote is source of truth for history)
-    var changed=mergeRemoteData(data.rows);
-    if(changed){
-      save();
-      renderDash();renderCC();renderFix();renderVar();renderRec();renderHist();
-      dot.className='sdot';st.textContent='SYNC';
-      setTimeout(function(){st.textContent='SYNC';},2000);
-    }
-  }catch(e){
-    // Silently fail - app still works offline
-    dot.className='sdot off';st.textContent='ERRO';
-    setTimeout(function(){dot.className='sdot';st.textContent='SYNC';},5000);
-  }
+  return new Promise(function(resolve){
+    // Use JSONP to bypass CORS — Apps Script supports callback param
+    var cbName='_gasCb'+Date.now();
+    var script=document.createElement('script');
+    var timer=setTimeout(function(){
+      delete window[cbName];
+      if(script.parentNode)script.parentNode.removeChild(script);
+      resolve();
+    },10000);
+    window[cbName]=function(data){
+      clearTimeout(timer);
+      delete window[cbName];
+      if(script.parentNode)script.parentNode.removeChild(script);
+      if(!data||!data.rows){resolve();return;}
+      var hash=data.rows.length+'_'+(data.rows[0]?data.rows[0].descricao:'');
+      if(hash===_lastPollHash){resolve();return;}
+      _lastPollHash=hash;
+      var changed=mergeRemoteData(data.rows);
+      if(changed){
+        save();
+        renderDash();renderCC();renderFix();renderVar();renderRec();renderHist();
+        dot.className='sdot';st.textContent='OK';
+        setTimeout(function(){st.textContent='SYNC';},2000);
+      }
+      resolve();
+    };
+    script.src=GAS+'?action=read&callback='+cbName+'&_='+Date.now();
+    document.head.appendChild(script);
+  });
 }
 
 function mergeRemoteData(rows){
