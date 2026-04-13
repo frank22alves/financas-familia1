@@ -411,10 +411,14 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 <div class="sc" id="sc-cfg"><div class="sc-inner">
   <div class="sg">
     <div class="sg-ttl">Sincronização entre dispositivos</div>
-    <p style="font-size:12px;color:var(--t3);margin-bottom:.75rem;line-height:1.7;">Cole abaixo o <b style="color:var(--jo)">ID da sua planilha</b> do Google Sheets para ativar a sincronização automática a cada 30 segundos entre celular e computador.<br><br>O ID fica na URL da planilha:<br><span style="font-family:var(--mono);font-size:10px;color:var(--t2);">docs.google.com/spreadsheets/d/<b style="color:var(--jo)">ID_AQUI</b>/edit</span></p>
+    <p style="font-size:12px;color:var(--t3);margin-bottom:.75rem;line-height:1.7;">A sincronização usa a URL pública da sua planilha gerada em <b style="color:var(--jo)">Arquivo → Publicar na web → CSV</b>.<br>A URL atual já está configurada. Para alterar, cole a nova URL abaixo.</p>
+    <div style="background:var(--s2);border-radius:var(--r2);padding:.6rem .85rem;margin-bottom:.6rem;border:1px solid var(--border);">
+      <div style="font-size:10px;color:var(--t3);margin-bottom:3px;font-weight:700;letter-spacing:.08em;">URL ATUAL</div>
+      <div style="font-size:11px;color:var(--rec);font-family:var(--mono);word-break:break-all;" id="sync-url-display">${SHEET_CSV_URL||'Não configurada'}</div>
+    </div>
     <div class="fld" style="margin-bottom:.5rem;">
-      <label>ID da planilha Google Sheets</label>
-      <input type="text" id="cfg-sheet-id" placeholder="Cole o ID aqui..." oninput="saveSheetId(this.value)" style="font-family:var(--mono);font-size:13px;">
+      <label>Nova URL (opcional)</label>
+      <input type="text" id="cfg-sheet-id" placeholder="https://docs.google.com/spreadsheets/d/e/..." oninput="saveSheetId(this.value)" style="font-family:var(--mono);font-size:12px;">
     </div>
     <div id="sync-test-msg" style="font-size:12px;color:var(--t3);margin-top:.4rem;"></div>
     <button class="btn btn-outline" onclick="testSync()" style="margin-top:.5rem;">Testar sincronização</button>
@@ -505,10 +509,9 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 
 <script>
 const GAS='https://script.google.com/macros/s/AKfycbxsbYj_z8wPYL2KD_8nAEbr0qDT3sFkw3_uFhQvRQjtD-f0XwWMVczuvRMxia2JsMdhUg/exec';
-// Para sincronização: cole aqui o ID da sua planilha Google Sheets
-// Exemplo: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms'
-// Encontre na URL: docs.google.com/spreadsheets/d/SEU_ID_AQUI/edit
-var SHEET_CSV_ID = '';  // <- Cole o ID aqui
+// URL pública de sincronização (gerada via Arquivo → Publicar na web → CSV)
+var SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVxqBWOhsQJILmVdGxnuLhrLbCJ_dNNAyOOHpetwjnuI0FNOjdkhSQWBMeRvq9y6_VTJz3b0KsN9V/pub?output=csv';
+var SHEET_CSV_ID=''; // mantido para compatibilidade
 const MF=['JANEIRO','FEVEREIRO','MARÇO','ABRIL','MAIO','JUNHO','JULHO','AGOSTO','SETEMBRO','OUTUBRO','NOVEMBRO','DEZEMBRO'];
 const MS=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
 const NW={uma:1,um:1,dois:2,duas:2,'três':3,tres:3,quatro:4,cinco:5,seis:6,sete:7,oito:8,nove:9,dez:10,onze:11,doze:12};
@@ -524,11 +527,8 @@ function saveCfg(){S.cfg.limJo=parseFloat(document.getElementById('lim-jo').valu
 function loadCfg(){
   if(S.cfg.limJo)document.getElementById('lim-jo').value=S.cfg.limJo;
   if(S.cfg.limFk)document.getElementById('lim-fk').value=S.cfg.limFk;
-  if(S.cfg.sheetCsvId){
-    SHEET_CSV_ID=S.cfg.sheetCsvId;
-    var el=document.getElementById('cfg-sheet-id');
-    if(el)el.value=SHEET_CSV_ID;
-  }
+  if(S.cfg.sheetCsvUrl) SHEET_CSV_URL=S.cfg.sheetCsvUrl;
+  if(S.cfg.sheetCsvId)  SHEET_CSV_ID=S.cfg.sheetCsvId;
 }
 function saveStatus(cart,val){if(!S.status)S.status={};S.status[cart+'CC']=val;save();renderDash();renderCC();const ej=document.getElementById('cc-status-jo');const ef=document.getElementById('cc-status-fk');if(ej)ej.value=S.status.joCC||'PENDENTE';if(ef)ef.value=S.status.fkCC||'PENDENTE';toast((cart==='jo'?'Jorgiane':'Frank')+' marcado como '+(val==='PAGO'?'Pago ✓':'Pendente ⏳'),'ok');}
 function toggleStatus(cart){if(!S.status)S.status={};const cur=S.status[cart+'CC']||'PENDENTE';saveStatus(cart,cur==='PAGO'?'PENDENTE':'PAGO');}
@@ -1371,13 +1371,19 @@ async function checkConn(){
 }
 
 function saveSheetId(val){
-  SHEET_CSV_ID=val.trim();
-  S.cfg.sheetCsvId=SHEET_CSV_ID;
-  save();
-  if(SHEET_CSV_ID){
-    if(_pollingInterval)clearInterval(_pollingInterval);
-    startPolling();
+  val=val.trim();
+  if(val.indexOf('http')===0){
+    // It's a full URL
+    SHEET_CSV_URL=val;
+    S.cfg.sheetCsvUrl=val;
+  } else {
+    // It's an ID
+    SHEET_CSV_ID=val;
+    S.cfg.sheetCsvId=val;
   }
+  save();
+  if(_pollingInterval)clearInterval(_pollingInterval);
+  startPolling();
 }
 
 async function testSync(){
@@ -1385,7 +1391,9 @@ async function testSync(){
   msg.style.color='var(--warn)';msg.textContent='Testando...';
   if(!SHEET_CSV_ID){msg.style.color='var(--danger)';msg.textContent='Cole o ID da planilha primeiro.';return;}
   try{
-    var url='https://docs.google.com/spreadsheets/d/'+SHEET_CSV_ID+'/export?format=csv&gid=0&cachebust='+Date.now();
+    var syncUrl=getSyncUrl();
+    if(!syncUrl){msg.style.color='var(--danger)';msg.textContent='Configure a URL de sincronização primeiro.';return;}
+    var url=syncUrl+(syncUrl.indexOf('?')>=0?'&':'?')+'cachebust='+Date.now();
     var r=await fetch(url,{cache:'no-store'});
     if(r.ok){
       var txt=await r.text();
@@ -1415,22 +1423,28 @@ var _lastPollHash='';
 var _pollingInterval=null;
 
 function startPolling(){
-  if(!SHEET_CSV_ID){
-    console.log('Sincronização desativada: cole o SHEET_CSV_ID no código.');
-    return;
-  }
   pollRemote();
   _pollingInterval=setInterval(pollRemote,30000);
 }
 
+function getSyncUrl(){
+  // Use saved custom URL first, then hardcoded, then build from ID
+  if(S.cfg.sheetCsvUrl) return S.cfg.sheetCsvUrl;
+  if(SHEET_CSV_URL) return SHEET_CSV_URL;
+  if(SHEET_CSV_ID) return 'https://docs.google.com/spreadsheets/d/'+SHEET_CSV_ID+'/export?format=csv&gid=0';
+  return '';
+}
+
 async function pollRemote(){
-  if(!SHEET_CSV_ID)return;
+  if(!getSyncUrl())return;
   var dot=document.getElementById('sdot');
   var st=document.getElementById('sstat');
   dot.className='sdot syncing';
   try{
     // Google Sheets CSV export - funciona sem CORS, sem Apps Script
-    var csvUrl='https://docs.google.com/spreadsheets/d/'+SHEET_CSV_ID+'/export?format=csv&gid=0&cachebust='+Date.now();
+    var syncUrl=getSyncUrl();
+    if(!syncUrl){dot.className='sdot';return;}
+    var csvUrl=syncUrl+(syncUrl.indexOf('?')>=0?'&':'?')+'cachebust='+Date.now();
     var resp=await fetch(csvUrl,{cache:'no-store'});
     if(!resp.ok){dot.className='sdot off';st.textContent='ERRO';return;}
     var csv=await resp.text();
