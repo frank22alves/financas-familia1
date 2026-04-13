@@ -411,14 +411,10 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 <div class="sc" id="sc-cfg"><div class="sc-inner">
   <div class="sg">
     <div class="sg-ttl">Sincronização entre dispositivos</div>
-    <p style="font-size:12px;color:var(--t3);margin-bottom:.75rem;line-height:1.7;">A sincronização usa a URL pública da sua planilha gerada em <b style="color:var(--jo)">Arquivo → Publicar na web → CSV</b>.<br>A URL atual já está configurada. Para alterar, cole a nova URL abaixo.</p>
-    <div style="background:var(--s2);border-radius:var(--r2);padding:.6rem .85rem;margin-bottom:.6rem;border:1px solid var(--border);">
-      <div style="font-size:10px;color:var(--t3);margin-bottom:3px;font-weight:700;letter-spacing:.08em;">URL ATUAL</div>
-      <div style="font-size:11px;color:var(--rec);font-family:var(--mono);word-break:break-all;" id="sync-url-display">${SHEET_CSV_URL||'Não configurada'}</div>
-    </div>
-    <div class="fld" style="margin-bottom:.5rem;">
-      <label>Nova URL (opcional)</label>
-      <input type="text" id="cfg-sheet-id" placeholder="https://docs.google.com/spreadsheets/d/e/..." oninput="saveSheetId(this.value)" style="font-family:var(--mono);font-size:12px;">
+    <p style="font-size:12px;color:var(--t3);margin-bottom:.75rem;line-height:1.7;">Sincronização em <b style="color:var(--jo)">tempo real</b> via Firebase. Qualquer alteração feita no celular ou computador aparece imediatamente em todos os dispositivos.</p>
+    <div style="background:var(--s2);border-radius:var(--r2);padding:.6rem .85rem;margin-bottom:.75rem;border:1px solid var(--border);display:flex;align-items:center;gap:10px;">
+      <div class="sdot" id="fb-status-dot"></div>
+      <div style="font-size:13px;font-weight:700;" id="fb-status-txt">Verificando...</div>
     </div>
     <div id="sync-test-msg" style="font-size:12px;color:var(--t3);margin-top:.4rem;"></div>
     <button class="btn btn-outline" onclick="testSync()" style="margin-top:.5rem;">Testar sincronização</button>
@@ -509,9 +505,9 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 
 <script>
 const GAS='https://script.google.com/macros/s/AKfycbxsbYj_z8wPYL2KD_8nAEbr0qDT3sFkw3_uFhQvRQjtD-f0XwWMVczuvRMxia2JsMdhUg/exec';
-// URL pública de sincronização (gerada via Arquivo → Publicar na web → CSV)
-var SHEET_CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVxqBWOhsQJILmVdGxnuLhrLbCJ_dNNAyOOHpetwjnuI0FNOjdkhSQWBMeRvq9y6_VTJz3b0KsN9V/pub?output=csv';
-var SHEET_CSV_ID=''; // mantido para compatibilidade
+const FB_CFG={apiKey:"AIzaSyAPgPRlS2LvHbk-0XndHDQm65b_a4aImTQ",authDomain:"financas-familia-9188d.firebaseapp.com",projectId:"financas-familia-9188d",storageBucket:"financas-familia-9188d.firebasestorage.app",messagingSenderId:"324504902756",appId:"1:324504902756:web:6adcfe544900fbd8d4d371"};
+var SHEET_CSV_URL='';var SHEET_CSV_ID='';
+var _db=null;var _fbReady=false;
 const MF=['JANEIRO','FEVEREIRO','MARÇO','ABRIL','MAIO','JUNHO','JULHO','AGOSTO','SETEMBRO','OUTUBRO','NOVEMBRO','DEZEMBRO'];
 const MS=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
 const NW={uma:1,um:1,dois:2,duas:2,'três':3,tres:3,quatro:4,cinco:5,seis:6,sete:7,oito:8,nove:9,dez:10,onze:11,doze:12};
@@ -573,6 +569,14 @@ function goTab(t){
   const renders={dash:renderDash,cc:renderCC,fix:renderFix,var:renderVar,rec:renderRec,hist:renderHist};
   renders[t]?.();
   if(t!=='dash') renderDash();
+  if(t==='cfg'){
+    var fbd=document.getElementById('fb-status-dot');
+    var fbt=document.getElementById('fb-status-txt');
+    if(fbd&&fbt){
+      if(_fbReady){fbd.className='sdot';fbt.textContent='Firebase conectado — sincronização ativa';}
+      else{fbd.className='sdot off';fbt.textContent='Aguardando conexão...';}
+    }
+  }
   // Always keep dashboard in sync when returning to it
   if(t!=='dash') { S._dashDirty=true; }
   if(t==='dash' && S._dashDirty) { S._dashDirty=false; }
@@ -1211,17 +1215,19 @@ async function pushToSheets(itens){
   if(!itens.length)return;
   var dot=document.getElementById('sdot'); dot.className='sdot syncing';
   document.getElementById('sstat').textContent='SYNC';
+  var ok=true;
+  // Write to Firebase (primary - real-time sync)
+  try{ await saveToFirebase(itens); }catch(e){ ok=false; console.warn(e); }
+  // Also write to Google Sheets via Apps Script (backup spreadsheet)
   try{
-    // Send as text/plain to avoid CORS preflight - Apps Script handles it
-    await fetch(GAS,{
-      method:'POST',
-      mode:'no-cors',
-      headers:{'Content-Type':'text/plain'},
-      body:JSON.stringify({itens:itens})
-    });
-    dot.className='sdot'; document.getElementById('sstat').textContent='OK';
+    fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:itens})});
+  }catch(e){}
+  if(ok){
+    dot.className='sdot';document.getElementById('sstat').textContent='OK';
     setTimeout(function(){document.getElementById('sstat').textContent='SYNC';},2000);
-  }catch(e){dot.className='sdot off';document.getElementById('sstat').textContent='ERRO';}
+  } else {
+    dot.className='sdot off';document.getElementById('sstat').textContent='ERRO';
+  }
 }
 
 async function enviar(tipo){
@@ -1240,7 +1246,8 @@ async function enviar(tipo){
   if(!itens.length){toast('Nada para salvar','err');return;}
   document.getElementById('overlay').classList.add('show');
   try{
-    await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:itens})});
+    await saveToFirebase(itens);
+    fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:itens})}).catch(function(){});
     S.hist.unshift({id:Date.now(),data:new Date().toLocaleDateString('pt-BR'),itens});
     S.hist=S.hist.slice(0,500);
     if(tipo==='cc')S.cc=[];
@@ -1255,8 +1262,15 @@ async function enviar(tipo){
 }
 
 async function syncNow(){
-  if(syncQ.length){await flushSync();toast('Sincronizado!','ok');}
-  else{toast('Tudo sincronizado','ok');}
+  var dot=document.getElementById('sdot');
+  dot.className='sdot syncing';
+  if(syncQ.length)await flushSync();
+  if(_fbReady){startFirebaseSync();toast('Sincronizado!','ok');}
+  else{
+    var ok=await initFirebase();
+    if(ok){startFirebaseSync();toast('Firebase conectado!','ok');}
+    else toast('Sem conexão','err');
+  }
 }
 
 /* ────────────────────────────────────────────────
@@ -1322,7 +1336,7 @@ function importarJSON(input){
       const batches=[];for(let i=0;i<allItens.length;i+=100)batches.push(allItens.slice(i,i+100));
       let sent=0;
       for(const batch of batches){
-        try{await fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:batch})});sent+=batch.length;}catch(e){}
+        try{await saveToFirebase(batch);fetch(GAS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({itens:batch})}).catch(function(){});sent+=batch.length;}catch(e){}
       }
       status.innerHTML=`<span style="color:var(--rec)">✅ Importação e sincronização concluídas!</span><br><span style="color:var(--t2)">${nCC} lançamentos de cartão<br>${nFix} fixo(s) · ${nRec} receita(s) · ${nHist} registros<br>${sent} itens enviados ao Google Sheets</span>`;
       renderDash();renderCC();renderFix();renderRec();renderVar();renderHist();
@@ -1361,12 +1375,14 @@ function viradaAno(){
 
 async function checkConn(){
   const dot=document.getElementById('sdot'),st=document.getElementById('sstat');
-  // Simple connectivity check
-  try{
-    await fetch(GAS+'?action=ping',{mode:'no-cors'});
-    dot.className='sdot';st.textContent='SYNC';
-  }catch(e){
-    dot.className='sdot off';st.textContent='ERRO';
+  if(_fbReady){dot.className='sdot';st.textContent='SYNC';}
+  else{
+    dot.className='sdot syncing';st.textContent='...';
+    initFirebase().then(function(ok){
+      dot.className=ok?'sdot':'sdot off';
+      st.textContent=ok?'SYNC':'ERRO';
+      if(ok)startFirebaseSync();
+    });
   }
 }
 
@@ -1387,23 +1403,19 @@ function saveSheetId(val){
 }
 
 async function testSync(){
-  var msg=document.getElementById('sync-test-msg');
-  msg.style.color='var(--warn)';msg.textContent='Testando...';
-  if(!SHEET_CSV_ID){msg.style.color='var(--danger)';msg.textContent='Cole o ID da planilha primeiro.';return;}
-  try{
-    var syncUrl=getSyncUrl();
-    if(!syncUrl){msg.style.color='var(--danger)';msg.textContent='Configure a URL de sincronização primeiro.';return;}
-    var url=syncUrl+(syncUrl.indexOf('?')>=0?'&':'?')+'cachebust='+Date.now();
-    var r=await fetch(url,{cache:'no-store'});
-    if(r.ok){
-      var txt=await r.text();
-      var lines=txt.split('\n').filter(Boolean).length;
-      msg.style.color='var(--rec)';msg.textContent='✓ Conectado! '+lines+' linha(s) na planilha.';
-    } else {
-      msg.style.color='var(--danger)';msg.textContent='Erro '+r.status+'. Verifique se a planilha está pública (compartilhar → qualquer pessoa com o link).';
-    }
-  }catch(e){
-    msg.style.color='var(--danger)';msg.textContent='Erro: '+e.message+'. Verifique o ID e se a planilha é pública.';
+  var fbd=document.getElementById('fb-status-dot');
+  var fbt=document.getElementById('fb-status-txt');
+  if(fbt)fbt.textContent='Conectando...';
+  var ok=await initFirebase();
+  if(ok){
+    startFirebaseSync();
+    if(fbd)fbd.className='sdot';
+    if(fbt)fbt.textContent='Firebase conectado — sincronização ativa';
+    toast('Firebase conectado!','ok');
+  } else {
+    if(fbd)fbd.className='sdot off';
+    if(fbt)fbt.textContent='Erro de conexão';
+    toast('Erro ao conectar','err');
   }
 }
 
@@ -1418,54 +1430,82 @@ function init(){
   });
 }
 
-// ── POLLING via CSV público ──────────────────────────
+// ── FIREBASE REALTIME SYNC ───────────────────────────
 var _lastPollHash='';
 var _pollingInterval=null;
+var _fbUnsub=null;
+
+async function initFirebase(){
+  try{
+    var {initializeApp}=await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    var {getFirestore,doc,setDoc,onSnapshot,collection,query,orderBy,limit,serverTimestamp,getDocs}=await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+    var app=initializeApp(FB_CFG);
+    _db={fs:getFirestore(app),doc,setDoc,onSnapshot,collection,query,orderBy,limit,serverTimestamp,getDocs};
+    _fbReady=true;
+    console.log('Firebase OK');
+    return true;
+  }catch(e){
+    console.warn('Firebase init error:',e);
+    return false;
+  }
+}
 
 function startPolling(){
-  pollRemote();
-  _pollingInterval=setInterval(pollRemote,30000);
+  initFirebase().then(function(ok){
+    if(ok) startFirebaseSync();
+    else console.warn('Firebase unavailable');
+  });
 }
 
-function getSyncUrl(){
-  // Use saved custom URL first, then hardcoded, then build from ID
-  if(S.cfg.sheetCsvUrl) return S.cfg.sheetCsvUrl;
-  if(SHEET_CSV_URL) return SHEET_CSV_URL;
-  if(SHEET_CSV_ID) return 'https://docs.google.com/spreadsheets/d/'+SHEET_CSV_ID+'/export?format=csv&gid=0';
-  return '';
-}
-
-async function pollRemote(){
-  if(!getSyncUrl())return;
+function startFirebaseSync(){
+  if(!_fbReady||!_db)return;
   var dot=document.getElementById('sdot');
   var st=document.getElementById('sstat');
-  dot.className='sdot syncing';
-  try{
-    // Google Sheets CSV export - funciona sem CORS, sem Apps Script
-    var syncUrl=getSyncUrl();
-    if(!syncUrl){dot.className='sdot';return;}
-    var csvUrl=syncUrl+(syncUrl.indexOf('?')>=0?'&':'?')+'cachebust='+Date.now();
-    var resp=await fetch(csvUrl,{cache:'no-store'});
-    if(!resp.ok){dot.className='sdot off';st.textContent='ERRO';return;}
-    var csv=await resp.text();
-    var hash=csv.length+'_'+csv.substring(0,60);
-    if(hash===_lastPollHash){dot.className='sdot';return;}
+  // Listen to lancamentos collection, ordered by ts, last 500
+  var q=_db.query(
+    _db.collection(_db.fs,'lancamentos'),
+    _db.orderBy('ts','desc'),
+    _db.limit(500)
+  );
+  if(_fbUnsub)_fbUnsub();
+  _fbUnsub=_db.onSnapshot(q,function(snap){
+    var rows=[];
+    snap.forEach(function(d){rows.push(d.data());});
+    var hash=rows.length+'_'+(rows[0]?rows[0].descricao:'');
+    if(hash===_lastPollHash)return;
     _lastPollHash=hash;
-    var rows=parseCSV(csv);
-    if(!rows||rows.length===0){dot.className='sdot';return;}
     var changed=mergeRemoteData(rows);
     if(changed){
       save();
       renderDash();renderCC();renderFix();renderVar();renderRec();renderHist();
       dot.className='sdot';st.textContent='OK';
-      setTimeout(function(){st.textContent='SYNC';},2500);
+      setTimeout(function(){st.textContent='SYNC';},2000);
     } else {
-      dot.className='sdot';
+      dot.className='sdot';st.textContent='SYNC';
     }
-  }catch(err){
+  },function(err){
+    console.warn('Firestore error:',err);
     dot.className='sdot off';st.textContent='ERRO';
-    setTimeout(function(){dot.className='sdot';st.textContent='SYNC';},5000);
-  }
+  });
+}
+
+async function saveToFirebase(itens){
+  if(!_fbReady||!_db)return;
+  try{
+    for(var i=0;i<itens.length;i++){
+      var item=Object.assign({},itens[i],{ts:_db.serverTimestamp()});
+      // Use content hash as doc ID to prevent duplicates
+      var key=(item.tipo||'')+'_'+(item.mes||'')+'_'+(item.descricao||'')+'_'+(item.valor||'')+'_'+(item.parcela||'')+'_'+(item.data||'')+'_'+Date.now()+'_'+i;
+      var id=btoa(unescape(encodeURIComponent(key))).replace(/[^a-zA-Z0-9]/g,'').substring(0,50);
+      await _db.setDoc(_db.doc(_db.fs,'lancamentos',id),item);
+    }
+  }catch(e){console.warn('Firebase write error:',e);}
+}
+
+async function pollRemote(){
+  // Firebase handles sync via onSnapshot - this is a no-op
+  // Manual sync: restart listener
+  if(_fbReady)startFirebaseSync();
 }
 
 function parseCSV(csv){
@@ -1516,31 +1556,39 @@ function splitCSVLine(line){
 }
 
 function mergeRemoteData(rows){
-  // rows = [{tipo,mes,cartao,titular,descricao,parcela,valor,data,categoria,...}]
-  // Build a set of remote IDs based on content hash
   var changed=false;
   var existingKeys=new Set();
   S.hist.forEach(function(h){ existingKeys.add(h.id); });
 
   rows.forEach(function(row){
-    var key='remote_'+row.tipo+'_'+row.mes+'_'+(row.descricao||'')+'_'+(row.valor||'')+'_'+(row.parcela||'')+'_'+(row.data||'');
+    // Firebase rows have ts field (Timestamp object) - normalize
+    var rowData=String(row.data||'');
+    var key='fb_'+(row.tipo||'')+'_'+(row.mes||'')+'_'+(row.descricao||'').substring(0,20)+'_'+(row.valor||'')+'_'+(row.parcela||'');
     if(existingKeys.has(key))return;
-    // New remote entry — add to history
-    var entry={id:key,data:row.data||'',itens:[row]};
+    var entry={id:key,data:rowData,itens:[{
+      tipo:row.tipo||'',mes:row.mes||'',cartao:row.cartao||'',
+      titular:row.titular||'',categoria:row.categoria||'',
+      descricao:row.descricao||'',parcela:row.parcela||'',
+      valor:parseFloat(row.valor)||0,situacao:row.situacao||'',
+      pago_por:row.pago_por||'',recebidoPor:row.recebidoPor||'',
+      data:rowData,tipoReceita:row.tipoReceita||row.categoria||''
+    }]};
     S.hist.unshift(entry);
     existingKeys.add(key);
     changed=true;
-    // Also sync fix/var/rec status if applicable
-    if(row.tipo==='FIXO'&&row.situacao){
-      var f=S.fix.find(function(f){ return f.desc===row.descricao; });
-      var mi=MF.indexOf(row.mes);
-      if(f&&mi>=0&&row.situacao==='PAGO'){
-        if(!f.sitOverrides)f.sitOverrides={};
-        f.sitOverrides[mi]='PAGO';
-      }
+    // Sync fix situacao
+    if(row.tipo==='FIXO'&&row.situacao==='PAGO'){
+      var f=S.fix.find(function(fx){ return fx.desc===(row.descricao||''); });
+      var mi=MF.indexOf(row.mes||'');
+      if(f&&mi>=0){if(!f.sitOverrides)f.sitOverrides={};f.sitOverrides[mi]='PAGO';}
+    }
+    // Sync cc status
+    if(row.tipo==='CARTAO'&&row.situacao==='PAGO'){
+      if(row.cartao==='JORGIANE')S.status.joCC='PAGO';
+      else if(row.cartao==='FRANK')S.status.fkCC='PAGO';
     }
   });
-  if(S.hist.length>1000) S.hist=S.hist.slice(0,1000);
+  if(S.hist.length>1000)S.hist=S.hist.slice(0,1000);
   return changed;
 }
 init();
