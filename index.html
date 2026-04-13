@@ -678,11 +678,16 @@ function parseCC(){
   const m=getMes('cc');
 
   lines.forEach(line=>{
-    // #7: extract content after first ":" that follows timestamp/name pattern
+    // Extract date from WhatsApp format: [dd/mm/yyyy, hh:mm] or dd/mm/yyyy hh:mm -
+    let lineDate='';
+    const reDateWpp=/\[?(\d{1,2}\/\d{1,2}\/\d{2,4}),?\s*\d{2}:\d{2}(?::\d{2})?\]?/;
+    const dateMatch=line.match(reDateWpp);
+    if(dateMatch) lineDate=dateMatch[1]; // e.g. "11/04/2026"
+
     let c=line;
-    // Remove WhatsApp timestamp prefix: [dd/mm/yyyy, hh:mm] Name: or dd/mm/yyyy hh:mm - Name:
+    // Remove WhatsApp timestamp prefix
     c=c.replace(/^\[?\d{1,2}\/\d{1,2}\/\d{2,4},?\s*\d{2}:\d{2}(?::\d{2})?\]?\s*[-–]?\s*/,'');
-    // Now remove everything up to and including the first colon (the sender name)
+    // Remove everything up to and including the first colon (sender name)
     const colonIdx=c.indexOf(':');
     if(colonIdx>-1) c=c.substring(colonIdx+1).trim();
 
@@ -695,7 +700,7 @@ function parseCC(){
     if(!cands.length){skip++;return;}
     const vt=Math.max(...cands);
     let desc=c.replace(/\d+\s*vez(?:es)?/gi,'').replace(new RegExp('('+Object.keys(NW).join('|')+')\\s*vez(?:es)?','gi'),'').replace(reV,'').replace(reJo,'').replace(reFk,'').replace(reCl,'').replace(/[^a-záéíóúàãõçA-ZÁÉÍÓÚÀÃÕÇ\s]/g,' ').replace(/\s+/g,' ').trim().toUpperCase()||'GASTO';
-    const item={id:'cc_'+Date.now()+'_'+Math.random().toString(36).slice(2),desc,vt,parc:parc||1,avista:!parc,cart:isJo?'jo':'fk',clarice:isCl,mi:m};
+    const item={id:'cc_'+Date.now()+'_'+Math.random().toString(36).slice(2),desc,vt,parc:parc||1,avista:!parc,cart:isJo?'jo':'fk',clarice:isCl,mi:m,data:lineDate||new Date().toLocaleDateString('pt-BR')};
     S.cc.push(item);
     queueSync('cc',item);
     added++;
@@ -714,7 +719,7 @@ function addManualCC(){
   const clarice=document.getElementById('cc-tit').value==='clarice';
   const m=getMes('cc');
   if(!desc||!vt||vt<=0){toast('Preencha descrição e valor','err');return;}
-  const item={id:'cc_'+Date.now(),desc,vt,parc,avista:parc===1,cart,clarice,mi:m};
+  const item={id:'cc_'+Date.now(),desc,vt,parc,avista:parc===1,cart,clarice,mi:m,data:new Date().toLocaleDateString('pt-BR')};
   S.cc.push(item);queueSync('cc',item);
   document.getElementById('cc-desc').value='';document.getElementById('cc-val').value='';
   save();renderCC();renderDash();toast('Adicionado!','ok');
@@ -803,6 +808,7 @@ function renderCC(){
       h+=`<div class="ic ${cc}${isAdiado?' adiado':''}">
         <div class="ibody">
           <div class="iname">${it.desc}</div>
+          ${it.data?`<div style="font-size:10px;color:var(--t3);margin-top:1px;">${it.data}</div>`:''}
           <div class="ipills">
             <span class="pill ${pc}">${it.clarice?'CLARICE':(it.cart==='jo'?'JORGIANE':'FRANK')}</span>
             <span class="pill p-g">${fmt(it.vt)}${it.parc>1?` ÷${it.parc}=${fmt(vp)}`:''}</span>
@@ -904,6 +910,7 @@ function renderFaturaDetalhe(cart, items, total, totalCl, m, lim, status){
     // desc + pills
     row+='<div style="flex:1;min-width:0;">';
     row+='<div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+it.desc+'</div>';
+    if(it.data) row+='<div style="font-size:10px;color:var(--t3);margin-top:1px;">'+it.data+'</div>';
     row+='<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;">';
     if(isCl) row+='<span class="pill p-cl">CLARICE</span>';
     if(!it.avista) row+='<span class="pill p-g">'+it.parc+'x</span>';
@@ -1166,7 +1173,7 @@ async function flushSync(){
     const it=b.item;
     if(b.tipo==='cc'){
       const vp=parseFloat((it.vt/it.parc).toFixed(2));
-      return Array.from({length:it.parc},(_,p)=>({tipo:'CARTAO',mes:MF[(it.mi+p)%12],cartao:it.cart==='jo'?'JORGIANE':'FRANK',titular:it.clarice?'CLARICE':'PROPRIO',descricao:it.desc,parcela:it.avista?'X':`${p+1}/${it.parc}`,valor:vp}));
+      return Array.from({length:it.parc},(_,p)=>({tipo:'CARTAO',mes:MF[(it.mi+p)%12],cartao:it.cart==='jo'?'JORGIANE':'FRANK',titular:it.clarice?'CLARICE':'PROPRIO',descricao:it.desc,parcela:it.avista?'X':`${p+1}/${it.parc}`,valor:vp,data:it.data||''}));
     } else if(b.tipo==='fix'){
       return [{tipo:'FIXO',mes:MF[it.mi],categoria:it.cat,descricao:it.desc,vencimento:it.venc,valor:it.val}];
     } else if(b.tipo==='var'){
@@ -1332,8 +1339,78 @@ async function checkConn(){
 
 function init(){
   load();populateSels();loadCfg();renderDash();checkConn();
-  // Flush any queued syncs on startup
   if(syncQ.length)scheduleSyncFlush();
+  // Start polling for remote changes every 30s
+  startPolling();
+  // Also poll when page becomes visible (switching back from another app)
+  document.addEventListener('visibilitychange',function(){
+    if(document.visibilityState==='visible') pollRemote();
+  });
+}
+
+// ── POLLING ──────────────────────────────────────────
+var _lastPollHash='';
+var _pollingInterval=null;
+
+function startPolling(){
+  pollRemote();
+  _pollingInterval=setInterval(pollRemote,30000);
+}
+
+async function pollRemote(){
+  var dot=document.getElementById('sdot');
+  var st=document.getElementById('sstat');
+  try{
+    var resp=await fetch(GAS+'?action=read',{mode:'cors',cache:'no-store'});
+    if(!resp.ok)return;
+    var data=await resp.json();
+    if(!data||!data.rows) return;
+    // Hash check to avoid unnecessary re-renders
+    var hash=JSON.stringify(data.rows).length+'_'+data.rows.length;
+    if(hash===_lastPollHash)return;
+    _lastPollHash=hash;
+    // Merge remote data into local hist (remote is source of truth for history)
+    var changed=mergeRemoteData(data.rows);
+    if(changed){
+      save();
+      renderDash();renderCC();renderFix();renderVar();renderRec();renderHist();
+      dot.className='sdot';st.textContent='SYNC';
+      setTimeout(function(){st.textContent='SYNC';},2000);
+    }
+  }catch(e){
+    // Silently fail - app still works offline
+    dot.className='sdot off';st.textContent='ERRO';
+    setTimeout(function(){dot.className='sdot';st.textContent='SYNC';},5000);
+  }
+}
+
+function mergeRemoteData(rows){
+  // rows = [{tipo,mes,cartao,titular,descricao,parcela,valor,data,categoria,...}]
+  // Build a set of remote IDs based on content hash
+  var changed=false;
+  var existingKeys=new Set();
+  S.hist.forEach(function(h){ existingKeys.add(h.id); });
+
+  rows.forEach(function(row){
+    var key='remote_'+row.tipo+'_'+row.mes+'_'+(row.descricao||'')+'_'+(row.valor||'')+'_'+(row.parcela||'')+'_'+(row.data||'');
+    if(existingKeys.has(key))return;
+    // New remote entry — add to history
+    var entry={id:key,data:row.data||'',itens:[row]};
+    S.hist.unshift(entry);
+    existingKeys.add(key);
+    changed=true;
+    // Also sync fix/var/rec status if applicable
+    if(row.tipo==='FIXO'&&row.situacao){
+      var f=S.fix.find(function(f){ return f.desc===row.descricao; });
+      var mi=MF.indexOf(row.mes);
+      if(f&&mi>=0&&row.situacao==='PAGO'){
+        if(!f.sitOverrides)f.sitOverrides={};
+        f.sitOverrides[mi]='PAGO';
+      }
+    }
+  });
+  if(S.hist.length>1000) S.hist=S.hist.slice(0,1000);
+  return changed;
 }
 init();
 </script>
